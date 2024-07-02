@@ -27,14 +27,14 @@ Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
 
 Route::get('/koleksi/{id_kategori}/buku', [KategoriBukuUserController::class, 'bukuByKategori'])
     ->name('koleksi')
-<<<<<<< HEAD
+
     ->middleware(['auth', 'verified']);   
-=======
-    ->middleware(['auth', 'verified']);
 
 
 
->>>>>>> a65728236b23d912d59b8a9b0e1b06611a7b4fbd
+
+
+
 Route::get('/pinjam/{id_buku}', [KategoriBukuUserController::class, 'pinjam'])
     ->name('pinjam')
     ->middleware(['auth', 'verified']);
