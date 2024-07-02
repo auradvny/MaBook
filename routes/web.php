@@ -32,11 +32,14 @@ Route::post('/submit/{id_buku}', [KategoriBukuUserController::class, 'submit'])
 ->name('submit')
 ->middleware(['auth', 'verified']);   
 
-Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'peminjaman'])
+Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'index'])
 ->name('peminjaman')
 ->middleware(['auth', 'verified']);   
 
 
+Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
+->name('submit')
+->middleware(['auth', 'verified']);   
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

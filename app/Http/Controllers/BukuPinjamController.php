@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class BukuPinjamController extends Controller
 {
-    public function peminjaman()
+    public function index($id_buku)
     {
-        $Buku = Buku::all();
+        $Buku = Buku::findOrFail($id_buku);
         return view(' peminjaman', compact('Buku'));
     }
 
@@ -16,15 +16,16 @@ class BukuPinjamController extends Controller
     
     public function submit(Request $request)
     {
+
+        
         $Buku = new Buku();
         $Buku-> judul_buku =$request-> judul_buku;
         $Buku-> penulis_buku =$request-> penulis_buku;
         $Buku-> tahun_terbit =$request-> tahun_terbit;
         $Buku-> jumlah_halaman =$request-> jumlah_halaman;
-        $Buku->kategori_id = $request->kategori_id; 
         $Buku->save();
     
 
-    return redirect()-> route ('admin.Buku.manage')->with('success', 'Buku berhasil ditambahkan');
+    return redirect()-> route ('peminjaman')->with('success', 'Buku berhasil ditambahkan');
 }
 }

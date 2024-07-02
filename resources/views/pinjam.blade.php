@@ -22,42 +22,40 @@
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
-       
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Detail Buku: {{ $Buku->judul_buku }}
+        </h2>
         <div class="table-container">
                 <table class="table">
+
                     <thead>
                         <tr>
                             <th>Judul Buku</th>
+                            <td> {{ $Buku->judul_buku }}</td>
                         </tr>
                         <thead>
                             <tr>
                             <th>Penulis</th>
+                            <td>{{ $Buku->penulis_buku}} </td>
                             </tr>
                         </thead>
                         <thead>
                             <tr>
                             <th>Tahun Terbit</th>
+                            <td> {{ $Buku->tahun_terbit }}</td>
                             </tr>
                         </thead>
                         <thead>
                             <tr>
                             <th>Jumlah Halaman</th>
+                            <td> {{ $Buku->jumlah_halaman }}</td>
                         </tr>
                         </thead>
                     </thead>
                    
-                    @foreach ($Buku as $data)
-                     
-                      <tr> 
-                          <td> {{ $data->judul_buku }}</td>
-                          <td>{{ $data->penulis_buku}} </td>
-                          <td> {{ $data->tahun_terbit }}</td>
-                          <td> {{ $data->jumlah_halaman }}</td>
-                        
-                      </tr>
-                      @endforeach
+                   
                        <td>
-                                    <form action="{{ route('peminjaman', ['id_buku' => $data->id_buku]) }}" method="POST">
+                                    <form action="{{ route('peminjaman', ['id_buku' => $Buku->id_buku]) }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-primary">Pinjam</button>
                                     </form>
