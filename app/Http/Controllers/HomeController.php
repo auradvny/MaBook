@@ -20,7 +20,6 @@ class HomeController extends Controller
     public function tampil()
     {
         $KategoriBuku = KategoriBuku::Get();
-        $KategoriBuku = KategoriBuku::Get();
 
 
         return view('dashboard', compact('KategoriBuku'));
