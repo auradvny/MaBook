@@ -83,7 +83,7 @@
                                   <li><a href="index.html#about">Kategori Buku</a></li>
                                   <li><a href="index.html#features">Peminjaman</a></li>
                                   <li><a href="index.html#services">Pengembalian</a></li>
-                                  <li><a href="index.html#pricing">Pricing</a></li>
+                                  <li><a href="index.html#pricing">SSSSS</a></li>
                                   <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                     <ul>
                                       <li><a href="#">Dropdown 1</a></li>
