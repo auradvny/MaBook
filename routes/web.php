@@ -32,11 +32,14 @@ Route::post('/submit/{id_buku}', [KategoriBukuUserController::class, 'submit'])
 ->name('submit')
 ->middleware(['auth', 'verified']);   
 
-Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'peminjaman'])
+Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'index'])
 ->name('peminjaman')
 ->middleware(['auth', 'verified']);   
 
 
+Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
+->name('submit')
+->middleware(['auth', 'verified']);   
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -75,7 +78,7 @@ Route::middleware('auth','admin')->group(function () {
     Route::post('/admin/User/delete/{id}', [UserController::class, 'delete'])->name('admin.User.delete');
 
     Route::get('/admin/Peminjaman', [PeminjamanController::class, 'index'])->name('admin.Peminjaman');
-    Route::get('/admin/Peminjaman/manage', [PeminjamanController::class, 'tampil'])->name('admin.Peminjaman.manage');
+    Route::get('/admin/Peminjaman/manage', [PeminjamanController::class, 'index'])->name('admin.Peminjaman.manage');
     Route::get('/admin/Peminjaman/create', [PeminjamanController::class, 'create'])->name('admin.Peminjaman.create');
     Route::post('/admin/Peminjaman/submit', [PeminjamanController::class, 'submit'])->name('admin.Peminjaman.submit');
 });

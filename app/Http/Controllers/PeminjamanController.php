@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Buku;
 class PeminjamanController extends Controller
 {
-    public function tampil(): View
+    public function index() :view
     {
         $Peminjaman = Peminjaman::get();
         return view('admin.Peminjaman.manage', compact('Peminjaman'));
