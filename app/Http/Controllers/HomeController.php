@@ -8,24 +8,20 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $KategoriBuku= KategoriBuku::Get();
-        
+    public function index()
+    {
 
-        return view('admin.dashboard', compact('KategoriBuku'));
+        $KategoriBuku = KategoriBuku::orderBy('id_kategori', 'desc')->get();
+        $total = KategoriBuku::count();
+        return view('admin.dashboard', compact(['KategoriBuku', 'total']));
     }
-<<<<<<< HEAD
     
-    public function tampil(){
-        $KategoriBuku= KategoriBuku::Get();
-        
-=======
-
+   
     public function tampil()
     {
         $KategoriBuku = KategoriBuku::Get();
 
->>>>>>> ef1dbee42a567c246da1b7a9b60f56327596bee6
+
 
         return view('dashboard', compact('KategoriBuku'));
     }
