@@ -86,12 +86,22 @@
                         <td>{{ $Buku->jumlah_halaman }}</td>
                     </tr>
                 </thead>
+            </table>
+        </div>
+    
+                <form action="{{ route('admin.Peminjaman.submit') }}" method="POST">
+                    @csrf
+                   
+                   
+                    <label> Tanggal Pinjam</label>
+                    <input type=" date " name="tanggal_peminjaman" class="form-control mb-2">
+                   
                 <tbody>
                     <tr>
                         <td colspan="2">
                             <form action="{{ route('peminjaman', ['id_buku' => $Buku->id_buku]) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-primary">Pinjam</button>
+                                <button  class="btn btn-primary">Pinjam</button>
                             </form>
                         </td>
                     </tr>
