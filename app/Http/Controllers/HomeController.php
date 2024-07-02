@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\KategoriBuku;
 use App\Models\Buku;
 
@@ -15,16 +16,11 @@ class HomeController extends Controller
         $total = KategoriBuku::count();
         return view('admin.dashboard', compact(['KategoriBuku', 'total']));
     }
-    
-   
-    public function tampil()
-    {
-        $KategoriBuku = KategoriBuku::Get();
 
 
-
-        return view('dashboard', compact('KategoriBuku'));
-    }
-   
-   
+    // public function tampil()
+    // {
+    //     $KategoriBuku = KategoriBuku::Get();
+    //     return view('dashboard', compact('KategoriBuku'));
+    // }
 }
