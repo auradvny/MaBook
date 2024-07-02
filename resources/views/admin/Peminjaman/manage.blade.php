@@ -32,17 +32,19 @@
         </thead>
       <?php $no = 1; ?> 
       @foreach ($Peminjaman as $data )
-      <tr> 
+      
           <td> {{ $no++ }}</td>
           <td> {{ $data->id }}</td>
           <td>{{ $data->id_buku}} </td>
           <td> {{ $data->tanggal_peminjaman }}</td>
           <td> {{ $data->tanggal_pengembalian}}</td>
           <td> {{ $data->status_peminjaman}}</td>
-          <td>
-              <a href="{{ route('admin.Peminjaman.edit', $data->id_peminjaman) }}" class="btn btn-sm btn-warning">Edit</a>
-           
-          <form action="{{ route('admin.Peminjaman.delete', $data->id_peminjaman) }}" method="POST">
+    </td>
+    <td>
+               <a href="{{ route('admin.Peminjaman.edit', $data->id_peminjaman) }}" class="btn btn-sm btn-warning">Edit</a> 
+
+        
+           <form action="{{ route('admin.Peminjaman.delete', $data->id_peminjaman) }}" method="POST">
             @csrf
             <button class="btn btn-sm btn-danger"> Hapus </button>
         </form>

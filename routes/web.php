@@ -21,9 +21,6 @@ Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
 Route::get('/koleksi/{id_kategori}/buku', [KategoriBukuUserController::class, 'bukuByKategori'])
     ->name('koleksi')
     ->middleware(['auth', 'verified']);   
-
- 
-
 Route::get('/pinjam/{id_buku}', [KategoriBukuUserController::class, 'pinjam'])
 ->name('pinjam')
 ->middleware(['auth', 'verified']);   
@@ -40,6 +37,9 @@ Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'index'])
 Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
 ->name('submit')
 ->middleware(['auth', 'verified']);   
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -81,6 +81,9 @@ Route::middleware('auth','admin')->group(function () {
     Route::get('/admin/Peminjaman/manage', [PeminjamanController::class, 'index'])->name('admin.Peminjaman.manage');
     Route::get('/admin/Peminjaman/create', [PeminjamanController::class, 'create'])->name('admin.Peminjaman.create');
     Route::post('/admin/Peminjaman/submit', [PeminjamanController::class, 'submit'])->name('admin.Peminjaman.submit');
+    Route::get('/admin/Peminjaman/edit/{id}', [PeminjamanController::class, 'edit'])->name('admin.Peminjaman.edit');
+    Route::post('/admin/Peminjaman/update/{id}', [PeminjamanController::class, 'update'])->name('admin.Peminjaman.update');
+    Route::post('/admin/Peminjaman/delete/{id}', [PeminjamanController::class, 'delete'])->name('admin.Peminjaman.delete');
 });
 
 require __DIR__.'/auth.php';
