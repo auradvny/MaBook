@@ -18,25 +18,38 @@ Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+// Route::get('/peminjamanbuku', function () {
+//     return view('peminjaman');
+// })->middleware(['auth', 'verified'])->name('peminjaman');
+// Route::get('/peminjaman', function () {
+//     return view('peminjaman');
+// })->middleware(['auth', 'verified'])->name('peminjaman');
+
 Route::get('/koleksi/{id_kategori}/buku', [KategoriBukuUserController::class, 'bukuByKategori'])
     ->name('koleksi')
+<<<<<<< HEAD
     ->middleware(['auth', 'verified']);   
+=======
+    ->middleware(['auth', 'verified']);
+
+
+
+>>>>>>> a65728236b23d912d59b8a9b0e1b06611a7b4fbd
 Route::get('/pinjam/{id_buku}', [KategoriBukuUserController::class, 'pinjam'])
-->name('pinjam')
-->middleware(['auth', 'verified']);   
+    ->name('pinjam')
+    ->middleware(['auth', 'verified']);
 
 Route::post('/submit/{id_buku}', [KategoriBukuUserController::class, 'submit'])
-->name('submit')
-->middleware(['auth', 'verified']);   
+    ->name('submit')
+    ->middleware(['auth', 'verified']);
 
 Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'index'])
-->name('peminjaman')
-->middleware(['auth', 'verified']);   
-
+    ->name('peminjaman')
+    ->middleware(['auth', 'verified']);
 
 Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
-->name('submit')
-->middleware(['auth', 'verified']);   
+    ->name('submit')
+    ->middleware(['auth', 'verified']);
 
 
 
@@ -47,11 +60,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/daftarpinjam', function () {
+    return view('peminjaman');
+})->middleware(['auth', 'verified'])->name('daftarpinjam');
 
-    
-
-
-Route::middleware('auth','admin')->group(function () {
+Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/dashboard', [HomeController::class, 'index']);
     Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/KategoriBuku', [KategoriBukuController::class, 'index'])->name('admin.KategoriBuku');
@@ -86,6 +99,6 @@ Route::middleware('auth','admin')->group(function () {
     Route::post('/admin/Peminjaman/delete/{id}', [PeminjamanController::class, 'delete'])->name('admin.Peminjaman.delete');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);

@@ -30,7 +30,7 @@
 
                     <thead>
                         <tr>
-                            <th>Judul Buku</th>
+                            <th>Judul Buku Ok</th>
                             <td> {{ $Buku->judul_buku }}</td>
                         </tr>
                         <thead>
