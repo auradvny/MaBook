@@ -30,11 +30,6 @@ Route::get('/koleksi/{id_kategori}/buku', [KategoriBukuUserController::class, 'b
 
     ->middleware(['auth', 'verified']);   
 
-
-
-
-
-
 Route::get('/pinjam/{id_buku}', [KategoriBukuUserController::class, 'pinjam'])
     ->name('pinjam')
     ->middleware(['auth', 'verified']);
