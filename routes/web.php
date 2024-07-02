@@ -27,6 +27,9 @@ Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
 
 Route::get('/koleksi/{id_kategori}/buku', [KategoriBukuUserController::class, 'bukuByKategori'])
     ->name('koleksi')
+<<<<<<< HEAD
+    ->middleware(['auth', 'verified']);   
+=======
     ->middleware(['auth', 'verified']);
 
 
