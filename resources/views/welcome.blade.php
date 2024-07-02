@@ -82,7 +82,7 @@
                                   <li><a href="index.html#hero" class="active">Home</a></li>
                                   <li><a href="index.html#about">Kategori Buku</a></li>
                                   <li><a href="index.html#features">Peminjaman</a></li>
-                                  <li><a href="index.html#services">Services</a></li>
+                                  <li><a href="index.html#services">Pengembalian</a></li>
                                   <li><a href="index.html#pricing">Pricing</a></li>
                                   <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                     <ul>
