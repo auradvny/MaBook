@@ -52,6 +52,34 @@
   --contrast-color: #ffffff;
 }
 
+
+.card-text {
+  flex-grow: 1; /* Membuat teks dapat berkembang dalam bagian badan kartu */
+  color: #666; /* Warna teks untuk deskripsi */
+}
+
+.btn-primary {
+  background-color: #0066cc; /* Warna latar belakang tombol */
+  border-color: #0066cc; /* Warna border tombol */
+}
+
+.btn-primary:hover {
+  background-color: #0059b3; /* Warna latar belakang tombol saat hover */
+  border-color: #0059b3; /* Warna border tombol saat hover */
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.5); /* Efek shadow saat tombol aktif */
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: #b3c6e6; /* Warna tombol jika dinonaktifkan */
+  border-color: #b3c6e6; /* Warna border tombol jika dinonaktifkan */
+}
+
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
