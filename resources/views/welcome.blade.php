@@ -79,7 +79,7 @@
                         
                               <nav id="navmenu" class="navmenu">
                                 <ul>
-                                  <li><a href="index.html#hero" class="active">Home</a></li>
+                                  <li><a href="index.html#hero" class="active">Home hhhhhhhh</a></li>
                                   <li><a href="index.html#about">Kategori Buku</a></li>
                                   <li><a href="index.html#features">Peminjaman</a></li>
                                   <li><a href="index.html#services">Pengembalian</a></li>
