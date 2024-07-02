@@ -67,71 +67,6 @@
             </div>
         </x-slot>
         <div class="table-container">
-<<<<<<< HEAD
-                <table class="table">
-
-                    <thead>
-                        <tr>
-                            <th>Judul Buku</th>
-                            <td> {{ $Buku->judul_buku }}</td>
-                        </tr>
-                        <thead>
-                            <tr>
-                            <th>Penulis</th>
-                            <td>{{ $Buku->penulis_buku}} </td>
-                            </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                            <th>Tahun Terbit</th>
-                            <td> {{ $Buku->tahun_terbit }}</td>
-                            </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                            <th>Jumlah Halaman</th>
-                            <td> {{ $Buku->jumlah_halaman }}</td>
-                        </tr>
-                        </thead>
-                    </thead>
-                   
-                   
-                       <td>
-                                    <form action="{{ route('peminjaman', ['id_buku' => $Buku->id_buku]) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary">Pinjam</button>
-                                    </form>
-                                </td>
-{{--                         
-                          <td>
-                              <a href="{{ route('admin.Buku.edit', $data->id_buku) }}" class="btn btn-sm btn-warning">Edit</a>
-                           
-                          <form action="{{ route('admin.Buku.delete', $data->id_buku) }}" method="POST">
-                            @csrf
-                            <button class="btn btn-sm btn-danger"> Hapus </button>
-                        </form>
-                      </tr>
-                      @endforeach
-                      </Table> --}}
-                     {{-- <tbody> 
-                        @foreach ($Buku as $index => $data)
-                            <tr> 
-                                <td>{{ $data->judul_buku }}</td>
-                                <td>{{ $data->penulis_buku }}</td>
-                                <td>{{ $data->tahun_terbit }}</td>
-                                <td>{{ $data->jumlah_halaman }}</td>
-                                <td>
-                                    <form action="{{ route('oke', ['id_buku' => $data->id_buku]) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary">Pinjam</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach 
-                    </tbody> --}}
-                </table>
-                
-=======
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -162,7 +97,6 @@
                     </tr>
                 </tbody>
             </table>
->>>>>>> e185bfcdff3dd8a69a020c8d960c0cc2888b7664
         </div>
     </body>
     </html>  
