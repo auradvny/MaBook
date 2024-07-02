@@ -1,3 +1,4 @@
+<!-- resources/views/buku/detail.blade.php -->
 <x-app-layout>
     <!DOCTYPE html>
     <html lang="en">
@@ -7,88 +8,95 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Aplikasi Perpustakaan</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #f8f9fa;
+            }
+            .header {
+                background-color: #bdc2c6;
+                color: #fff;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
             .table-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 50vh; /* Contoh: Membuat tabel ditengah */
             }
+            .table {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            .table th, .table td {
+                padding: 1rem;
+                text-align: left;
+            }
+            .table th {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .table td {
+                background-color: #fff;
+            }
+            .btn-primary {
+                background-color: #007bff;
+                border: none;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
         </style>
     </head>
     <body>
         <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Dashboard') }}
-            </h2>
+            <div class="header">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    Detail Buku: {{ $Buku->judul_buku }}
+                </h2>
+            </div>
         </x-slot>
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Detail Buku: {{ $Buku->judul_buku }}
-        </h2>
         <div class="table-container">
-                <table class="table">
-
-                    <thead>
-                        <tr>
-                            <th>Judul Buku Ok</th>
-                            <td> {{ $Buku->judul_buku }}</td>
-                        </tr>
-                        <thead>
-                            <tr>
-                            <th>Penulis</th>
-                            <td>{{ $Buku->penulis_buku}} </td>
-                            </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                            <th>Tahun Terbit</th>
-                            <td> {{ $Buku->tahun_terbit }}</td>
-                            </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                            <th>Jumlah Halaman</th>
-                            <td> {{ $Buku->jumlah_halaman }}</td>
-                        </tr>
-                        </thead>
-                    </thead>
-                   
-                   
-                       <td>
-                                    <form action="{{ route('peminjaman', ['id_buku' => $Buku->id_buku]) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary">Pinjam</button>
-                                    </form>
-                                </td>
-{{--                         
-                          <td>
-                              <a href="{{ route('admin.Buku.edit', $data->id_buku) }}" class="btn btn-sm btn-warning">Edit</a>
-                           
-                          <form action="{{ route('admin.Buku.delete', $data->id_buku) }}" method="POST">
-                            @csrf
-                            <button class="btn btn-sm btn-danger"> Hapus </button>
-                        </form>
-                      </tr>
-                      @endforeach
-                      </Table> --}}
-                     {{-- <tbody> 
-                        @foreach ($Buku as $index => $data)
-                            <tr> 
-                                <td>{{ $data->judul_buku }}</td>
-                                <td>{{ $data->penulis_buku }}</td>
-                                <td>{{ $data->tahun_terbit }}</td>
-                                <td>{{ $data->jumlah_halaman }}</td>
-                                <td>
-                                    <form action="{{ route('oke', ['id_buku' => $data->id_buku]) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary">Pinjam</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach 
-                    </tbody> --}}
-                </table>
-                
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Judul Buku</th>
+                        <td>{{ $Buku->judul_buku }}</td>
+                    </tr>
+                    <tr>
+                        <th>Penulis</th>
+                        <td>{{ $Buku->penulis_buku }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tahun Terbit</th>
+                        <td>{{ $Buku->tahun_terbit }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jumlah Halaman</th>
+                        <td>{{ $Buku->jumlah_halaman }}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <form action="{{ route('peminjaman', ['id_buku' => $Buku->id_buku]) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-primary">Pinjam</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </body>
     </html>  
