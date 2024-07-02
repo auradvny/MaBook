@@ -79,7 +79,7 @@
                         
                               <nav id="navmenu" class="navmenu">
                                 <ul>
-                                  <li><a href="index.html#hero" class="active">Home qsuhsjskwjkjmedwdrr</a></li>
+                                  <li><a href="index.html#hero" class="active">Home</a></li>
                                   <li><a href="index.html#about">About</a></li>
                                   <li><a href="index.html#features">Features</a></li>
                                   <li><a href="index.html#services">Services</a></li>
