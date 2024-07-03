@@ -88,24 +88,30 @@
                 </thead>
             </table>
         </div>
-    
-                <form action="{{ route('admin.Peminjaman.submit') }}" method="POST">
-                    @csrf
-                   
-                   
-                    <label> Tanggal Pinjam</label>
-                    <input type=" date " name="tanggal_peminjaman" class="form-control mb-2">
-                   
-                <tbody>
-                    <tr>
-                        <td colspan="2">
-                            <form action="{{ route('peminjaman', ['id_buku' => $Buku->id_buku]) }}" method="POST">
-                                @csrf
-                                <button  class="btn btn-primary">Pinjam</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
+        
+        <form action="{{ route('submit', ['id_buku' => $Buku->id_buku]) }}" method="POST">
+            @csrf
+            <input type="hidden" name="buku_id" value="{{ $Buku->id_buku }}">
+            <div class="form-group">
+                <label for="tanggal_peminjaman">Tanggal Pinjam</label>
+                <input type="date" name="tanggal_peminjaman" class="form-control mb-2" required>
+            </div>
+        </div>
+        <button class="btn btn-primary">Pinjam</button>
+    </form>
+                    {{-- <tr> 
+                        <th> Tanggal Pinjam </th>
+                        <td> <input type=" date " name="tanggal_peminjaman" class="form-control mb-2"></td>
+                </thead>
+            </table>
+        </div>
+ <form action="{{ route('submit', ['id_buku' => $Buku->id_buku]) }}" method="POST">
+            @csrf
+            <input type="hidden" name="id_buku" value="{{ $Buku->id_buku }}">
+            <button class="btn btn-primary">Pinjam</button>
+        </form>
+                    
+                </tbody> --}}
             </table>
         </div>
     </body>

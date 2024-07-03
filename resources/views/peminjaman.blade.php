@@ -17,32 +17,30 @@
                 <class="p-6 text-gray-900">
                    <h1 class="mb-0"> Buku yang dipinjam </h1>
 
-                   <form action="{{ route('admin.Peminjaman.submit') }}" method="POST">
-                    @csrf
-                   
-                    <label> Judul Buku </label>
-                    <select name="buku_id" class="form-control mb-2">
-                   
-                        @foreach($Buku as $data)
-                        <option value="{{ $data->id_buku }}">{{ $data->judul_buku}}</option>
-                        @endforeach
-                    </select>
-                    <label> Tanggal Peminjaman</label>
-                    <input type=" date " name="tanggal_peminjaman" class="form-control mb-2">
-                    <label> Tanggal Pengembalian</label>
-                    <input type=" date " name="tanggal_pengembalian" class="form-control mb-2">
-                    <div class="form-group">
-                        <label for="status_peminjaman">Status Peminjaman :</label>
-                        <select class="form-control"  name="status_peminjaman" required>
-                            @foreach($statuses as $status)
-                                <option value="{{ $status }}">{{ $status }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    
-                    <button class="btn btn-primary">Tambah</button>
                 
-                </div>
+                   <table class="table table-bordered table-hover">
+                       <thead class="table-dark">
+                           <tr>
+                               <th>No</th>
+                               <th>Judul Buku</th>
+                               <th> Tanggal Peminjaman </th>
+                               <th> Tanggal Pengembalian </th>
+                               <th> Status Peminjaman </th>
+                           </tr>
+                       </thead>
+                      <tbody>
+                        @foreach ($Buku as $index => $data)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $data->Buku->judul_buku}}</td>
+                            <td>{{ $data->tanggal_peminjaman}}</td>
+                            <td>{{ $data->tanggal_pengembalian}}</td>
+                            <td>{{ $data->status_peminjaman}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                   </table>
+                    
             </div>
         </div>
     </div>

@@ -46,7 +46,9 @@ Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
     ->name('submit')
     ->middleware(['auth', 'verified']);
 
-
+    Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'peminjaman'])
+    ->name('peminjaman')
+    ->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {
