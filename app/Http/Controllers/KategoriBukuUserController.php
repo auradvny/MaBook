@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KategoriBuku;
+use Carbon\Carbon;
 use App\Models\Buku;
+use App\Models\Peminjaman;
+use App\Models\KategoriBuku;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KategoriBukuUserController extends Controller
 {
@@ -34,5 +37,25 @@ class KategoriBukuUserController extends Controller
         //      } else {
         //        return redirect()->route('dashboard')->with('error', 'Buku tidak ditemukan atau tidak dapat dipinjam saat ini.');
         //         }
+    }
+
+    public function submit(Request $request, $id_buku)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required|date',
+        ]);
+
+        $tanggal_peminjaman = Carbon::parse($request->tanggal_peminjaman);
+        $tgl_pengembalian = $tanggal_peminjaman->copy()->addDays(3);
+
+        Peminjaman::create([
+            'user_id' => Auth::id(),
+            'buku_id' => $id_buku,
+            'tanggal_peminjaman' => $tanggal_peminjaman,
+            'tanggal_pengembalian' => $tgl_pengembalian,
+            'status_pengembalian' => 'belum dikembalikan',
+        ]);
+
+        return redirect()->route('daftarpinjam')->with('success', 'Buku berhasil dipinjam!');
     }
 }

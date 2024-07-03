@@ -13,19 +13,20 @@ class Peminjaman extends Model
     protected $primaryKey = 'id_peminjaman';
 
     protected $fillable = [
-        'id',
-        'id_buku',
+        'id_peminjaman',
+        'user_id',
+        'buku_id',
         'tanggal_peminjaman',
         'tanggal_pengembalian',
         'status_peminjaman',
     ];
 
-    public function user() :BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-     public function buku() :BelongsTo
+    public function buku(): BelongsTo
     {
         return $this->belongsTo(Buku::class, 'buku_id');
     }
