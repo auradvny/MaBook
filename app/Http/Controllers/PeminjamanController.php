@@ -23,9 +23,27 @@ class PeminjamanController extends Controller
 
     public function userindex()
     {
-        $peminjamans = Peminjaman::where('user_id', Auth::id())->get();
+        // Mendapatkan data peminjaman berdasarkan user yang sedang login, hanya yang belum dikembalikan dan diurutkan berdasarkan id_peminjaman terbaru
+        $peminjamans = Peminjaman::where('user_id', Auth::id())
+            ->where('status_peminjaman', 'belum dikembalikan')
+            ->orderBy('id_peminjaman', 'desc')
+            ->get();
+
         return view('peminjaman', compact('peminjamans'));
     }
+
+    public function userkembali()
+    {
+        // Mendapatkan data peminjaman berdasarkan user yang sedang login, hanya yang belum dikembalikan dan diurutkan berdasarkan id_peminjaman terbaru
+        $pengembalians = Peminjaman::where('user_id', Auth::id())
+            ->where('status_peminjaman', 'sudah dikembalikan')
+            ->orderBy('id_peminjaman', 'desc')
+            ->get();
+
+        return view('pengembalian', compact('pengembalians'));
+    }
+
+
 
     public function tampil()
     {

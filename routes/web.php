@@ -56,6 +56,10 @@ Route::middleware('auth')->group(function () {
     Route::get('daftarpinjam', [PeminjamanController::class, 'userindex'])->name('daftarpinjam');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('daftarkembali', [PeminjamanController::class, 'userkembali'])->name('daftarkembali');
+});
+
 Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/dashboard', [HomeController::class, 'index']);
     Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');

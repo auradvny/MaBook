@@ -36,6 +36,9 @@
                         <x-nav-link :href="route('daftarpinjam')" :active="request()->routeIs('daftarpinjam')" class="no-underline">
                             {{ __('Peminjaman') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('daftarkembali')" :active="request()->routeIs('daftarkembali')" class="no-underline">
+                            {{ __('Pengembalian') }}
+                        </x-nav-link>
                     @endif
                 </div>
             </div>
@@ -60,7 +63,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('profile.edit')" class="no-underline">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
@@ -70,7 +73,8 @@
 
                             <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                                this.closest('form').submit();"
+                                class="no-underline">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
