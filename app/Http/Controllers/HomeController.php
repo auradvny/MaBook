@@ -18,8 +18,8 @@ class HomeController extends Controller
     }
 
 
-    public function siswaDashboard()
-    {
-        return view('siswa.dashboard');
-    }
+    // public function siswaDashboard()
+    // {
+    //     return view('siswa.dashboard');
+    // }
 }

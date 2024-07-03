@@ -94,3 +94,7 @@ Route::middleware('auth', 'admin')->group(function () {
 require __DIR__ . '/auth.php';
 
 // Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+Route::middleware('auth', 'user')->group(function () {
+    Route::get('siswa/dashboard', [HomeController::class, 'index']);
+    Route::get('siswa/dashboard', [HomeController::class, 'index'])->name('siswa.dashboard');
+});

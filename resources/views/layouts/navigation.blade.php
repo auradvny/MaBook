@@ -34,7 +34,7 @@
                         </x-nav-link>
                     @elseif (auth()->user()->usertype == 'user')
                         <x-nav-link :href="route('siswa.dashboard')" :active="request()->routeIs('siswa.dashboard')">
-                            {{ __('Dashboard') }}
+                            {{ __('Dashboard Siswa') }}
                         </x-nav-link>
                     @endif
                 </div>
