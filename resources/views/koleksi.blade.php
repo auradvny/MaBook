@@ -2,6 +2,7 @@
 <x-app-layout>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             body {
                 font-family: 'Roboto', sans-serif;
             }
+
             .header-title {
                 background-color: #bdc2c6;
                 padding: 1rem;
@@ -21,21 +23,26 @@
                 margin-bottom: 1rem;
                 font-weight: 500;
                 text-align: center;
-            
+
             }
+
             .table {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
-            .table th, .table td {
+
+            .table th,
+            .table td {
                 vertical-align: middle;
                 font-weight: 400;
             }
+
             .action-btns {
                 display: flex;
                 gap: 0.5rem;
             }
         </style>
     </head>
+
     <body>
         <x-slot name="header">
             <div class="header-title">
@@ -45,8 +52,8 @@
             </div>
         </x-slot>
         <div class="mt-3 container">
-        
-            @if($Buku->isEmpty())
+
+            @if ($Buku->isEmpty())
                 <div class="alert alert-warning">
                     <p>Tidak ada buku dalam kategori ini.</p>
                 </div>
@@ -56,10 +63,10 @@
                         <tr>
                             <th>No</th>
                             <th>Judul Buku</th>
-                            <th>Aksi</th>
-                            {{-- <th>Penulis</th>
+                            <th>Penulis</th>
                             <th>Tahun Terbit</th>
-                            <th>Jumlah Halaman</th> --}}
+                            <th>Jumlah Halaman</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,11 +74,12 @@
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $data->judul_buku }}</td>
-                                {{-- <td>{{ $data->penulis_buku }}</td>
+                                <td>{{ $data->penulis_buku }}</td>
                                 <td>{{ $data->tahun_terbit }}</td>
-                                <td>{{ $data->jumlah_halaman }}</td> --}}
+                                <td>{{ $data->jumlah_halaman }}</td>
                                 <td class="action-btns">
-                                    <a href="{{ route('pinjam', ['id_buku' => $data->id_buku]) }}" class="btn btn-primary">Pinjam</a>
+                                    <a href="{{ route('pinjam', ['id_buku' => $data->id_buku]) }}"
+                                        class="btn btn-primary">Pinjam</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -80,5 +88,6 @@
             @endif
         </div>
     </body>
+
     </html>
 </x-app-layout>

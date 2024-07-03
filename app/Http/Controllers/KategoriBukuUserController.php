@@ -19,11 +19,24 @@ class KategoriBukuUserController extends Controller
 
     public function bukuByKategori($id_kategori)
     {
+        $userId = Auth::id(); // Mendapatkan ID user yang sedang login
         $KategoriBuku = KategoriBuku::findOrFail($id_kategori);
-        $Buku = Buku::where('kategori_id', $id_kategori)->get();
+
+        // Mendapatkan ID buku yang status peminjamannya belum dikembalikan oleh user
+        $bukuYangBelumDikembalikan = Peminjaman::where('user_id', $userId)
+            ->where('status_peminjaman', 'belum dikembalikan')
+            ->pluck('buku_id')
+            ->toArray();
+
+        // Mendapatkan buku berdasarkan kategori dan tidak termasuk yang belum dikembalikan oleh user
+        $Buku = Buku::where('kategori_id', $id_kategori)
+            ->whereNotIn('id_buku', $bukuYangBelumDikembalikan)
+            ->get();
 
         return view('koleksi', compact('Buku', 'KategoriBuku'));
     }
+
+
     public function pinjam($id_buku)
     {
         // Lakukan proses peminjaman buku berdasarkan $id_buku
@@ -53,7 +66,7 @@ class KategoriBukuUserController extends Controller
             'buku_id' => $id_buku,
             'tanggal_peminjaman' => $tanggal_peminjaman,
             'tanggal_pengembalian' => $tgl_pengembalian,
-            'status_pengembalian' => 'belum dikembalikan',
+            'status_peminjaman' => 'belum dikembalikan',
         ]);
 
         return redirect()->route('daftarpinjam')->with('success', 'Buku berhasil dipinjam!');
