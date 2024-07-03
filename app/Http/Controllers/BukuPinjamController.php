@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use Illuminate\Http\Request;
+use App\Models\Peminjaman;
+use Illuminate\Support\Facades\Auth;
 
 class BukuPinjamController extends Controller
 {
