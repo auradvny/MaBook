@@ -1,50 +1,48 @@
 <x-app-layout>
-    <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-   
+    <!DOCTYPE html>
+    <html lang="en">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <class="p-6 text-gray-900">
-                   <h1 class="mb-0"> Buku yang dipinjam </h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Aplikasi Perpustakaan</title>
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+    </head>
 
-                   <form action="{{ route('admin.Peminjaman.submit') }}" method="POST">
-                    @csrf
-                   
-                    <label> Judul Buku </label>
-                    <select name="buku_id" class="form-control mb-2">
-                   
-                        @foreach($Buku as $data)
-                        <option value="{{ $data->id_buku }}">{{ $data->judul_buku}}</option>
-                        @endforeach
-                    </select>
-                    <label> Tanggal Peminjaman</label>
-                    <input type=" date " name="tanggal_peminjaman" class="form-control mb-2">
-                    <label> Tanggal Pengembalian</label>
-                    <input type=" date " name="tanggal_pengembalian" class="form-control mb-2">
-                    <div class="form-group">
-                        <label for="status_peminjaman">Status Peminjaman :</label>
-                        <select class="form-control"  name="status_peminjaman" required>
-                            @foreach($statuses as $status)
-                                <option value="{{ $status }}">{{ $status }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    
-                    <button class="btn btn-primary">Tambah</button>
-                
-                </div>
-            </div>
+    <body>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Peminjaman') }}
+            </h2>
+        </x-slot>
+        <div class="mt-3 container">
+            <h4>Daftar Peminjaman Buku</h4>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Judul Buku</th>
+                        <th>Tanggal Peminjaman</th>
+                        <th>Tanggal Pengembalian</th>
+                        <th>Status Peminjaman</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 1; ?>
+                    @foreach ($peminjamans as $data)
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $data->buku->judul_buku }}</td>
+                            <td>{{ $data->tanggal_peminjaman }}</td>
+                            <td>{{ $data->tanggal_pengembalian }}</td>
+                            <td>{{ $data->status_peminjaman }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-    </div>
-</x-app-layout>
+    </body>
 
+    </html>
+</x-app-layout>

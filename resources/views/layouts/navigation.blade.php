@@ -33,8 +33,11 @@
                             {{ __('User') }}
                         </x-nav-link>
                     @elseif (auth()->user()->usertype == 'user')
-                        <x-nav-link :href="route('siswa.dashboard')" :active="request()->routeIs('siswa.dashboard')">
-                            {{ __('Dashboard Siswa') }}
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('daftarpinjam')" :active="request()->routeIs('daftarpinjam')">
+                            {{ __('Peminjaman') }}
                         </x-nav-link>
                     @endif
                 </div>

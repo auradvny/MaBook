@@ -52,9 +52,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/daftarpinjam', function () {
-    return view('peminjaman');
-})->middleware(['auth', 'verified'])->name('daftarpinjam');
+// Route::get('/daftarpinjam', function () {
+//     return view('peminjaman');
+// })->middleware(['auth', 'verified'])->name('daftarpinjam');
+// Route::get('/daftarpinjam', [PeminjamanController::class, 'index'])->name('daftarpinjam');
+
+Route::middleware('auth')->group(function () {
+    Route::get('daftarpinjam', [PeminjamanController::class, 'userindex'])->name('daftarpinjam');
+});
 
 Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/dashboard', [HomeController::class, 'index']);

@@ -1,6 +1,7 @@
 <x-app-layout>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
         <title>Aplikasi Perpustakaan</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
     </head>
+
     <body>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -38,8 +40,10 @@
                             <td>{{ $data->deskripsi_kategori }}</td>
                             {{-- <td><img src="{{ $data->image_url }}" alt="{{ $data->nama_kategori }}" style="width: 50px; height: 50px;"></td> --}}
                             <td class="d-flex">
-                                <a href="{{ route('admin.KategoriBuku.edit', $data->id_kategori) }}" class="btn btn-sm btn-warning me-2">Edit</a>
-                                <form action="{{ route('admin.KategoriBuku.delete', $data->id_kategori) }}" method="POST">
+                                <a href="{{ route('admin.KategoriBuku.edit', $data->id_kategori) }}"
+                                    class="btn btn-sm btn-warning me-2">Edit</a>
+                                <form action="{{ route('admin.KategoriBuku.delete', $data->id_kategori) }}"
+                                    method="POST">
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
@@ -71,5 +75,6 @@
             </div>
         </div>
     </body>
+
     </html>
 </x-app-layout>
