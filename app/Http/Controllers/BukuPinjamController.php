@@ -28,7 +28,6 @@ class BukuPinjamController extends Controller
         $Buku->jumlah_halaman = $request->jumlah_halaman;
         $Buku->save();
 
-
         return redirect()->route('peminjaman')->with('success', 'Buku berhasil ditambahkan');
     }
 }

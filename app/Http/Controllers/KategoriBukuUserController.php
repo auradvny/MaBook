@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\KategoriBuku;
 use App\Models\Buku;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class KategoriBukuUserController extends Controller
     {
         $KategoriBuku = KategoriBuku::findOrFail($id_kategori);
         $Buku = Buku::where('kategori_id', $id_kategori)->get();
-        
+
         return view('koleksi', compact('Buku', 'KategoriBuku'));
     }
     public function pinjam($id_buku)
@@ -26,12 +27,12 @@ class KategoriBukuUserController extends Controller
         $Buku = Buku::find($id_buku);
         return view('pinjam', compact('Buku'));
 
-      // Contoh tindakan peminjaman
-//       if ($Buku) {
-            
-//    return redirect()->route('dashboard')->with('success', 'Buku berhasil dipinjam!');
-//      } else {
-//        return redirect()->route('dashboard')->with('error', 'Buku tidak ditemukan atau tidak dapat dipinjam saat ini.');
-//         }
-     }
+        // Contoh tindakan peminjaman
+        //       if ($Buku) {
+
+        //    return redirect()->route('dashboard')->with('success', 'Buku berhasil dipinjam!');
+        //      } else {
+        //        return redirect()->route('dashboard')->with('error', 'Buku tidak ditemukan atau tidak dapat dipinjam saat ini.');
+        //         }
+    }
 }

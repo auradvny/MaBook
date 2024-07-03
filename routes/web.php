@@ -46,19 +46,11 @@ Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
     ->name('submit')
     ->middleware(['auth', 'verified']);
 
-
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-// Route::get('/daftarpinjam', function () {
-//     return view('peminjaman');
-// })->middleware(['auth', 'verified'])->name('daftarpinjam');
-// Route::get('/daftarpinjam', [PeminjamanController::class, 'index'])->name('daftarpinjam');
 
 Route::middleware('auth')->group(function () {
     Route::get('daftarpinjam', [PeminjamanController::class, 'userindex'])->name('daftarpinjam');
@@ -102,7 +94,3 @@ Route::middleware('auth', 'admin')->group(function () {
 require __DIR__ . '/auth.php';
 
 // Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
-Route::middleware('auth', 'user')->group(function () {
-    Route::get('siswa/dashboard', [HomeController::class, 'index']);
-    Route::get('siswa/dashboard', [HomeController::class, 'index'])->name('siswa.dashboard');
-});
