@@ -13,42 +13,37 @@
     <body>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Buku') }}
+                {{ __('Kategori Buku') }}
             </h2>
         </x-slot>
-
         <div class="container mt-3">
-            <h4>List Buku</h4>
+            <h4>List Kategori Buku</h4>
             <div class="d-flex justify-content-end mb-3">
-                <a class="btn btn-success" href="{{ route('admin.Buku.create') }}">Tambah</a>
+                <a class="btn btn-success" href="{{ route('admin.KategoriBuku.create') }}">Tambah</a>
             </div>
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
-                        <th>Judul Buku</th>
-                        <th>Penulis</th>
-                        <th>Tahun Terbit</th>
-                        <th>Jumlah Halaman</th>
-                        <th>Kategori Buku</th>
+                        <th>Nama Kategori</th>
+                        <th>Deskripsi Kategori</th>
+                        {{-- <th>Gambar</th> --}}
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1; ?>
-                    @foreach ($Buku as $data)
+                    @foreach ($KategoriBuku as $data)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $data->judul_buku }}</td>
-                            <td>{{ $data->penulis_buku }}</td>
-                            <td>{{ $data->tahun_terbit }}</td>
-                            <td>{{ $data->jumlah_halaman }}</td>
-                            <td>{{ $data->kategori->nama_kategori }}</td>
+                            <td>{{ $data->nama_kategori }}</td>
+                            <td>{{ $data->deskripsi_kategori }}</td>
+                            {{-- <td><img src="{{ $data->image_url }}" alt="{{ $data->nama_kategori }}" style="width: 50px; height: 50px;"></td> --}}
                             <td class="d-flex">
-                                <a href="{{ route('admin.Buku.edit', $data->id_buku) }}"
+                                <a href="{{ route('admin.KategoriBuku.edit', $data->id_kategori) }}"
                                     class="btn btn-sm btn-warning me-2">Edit</a>
-                                <form action="{{ route('admin.Buku.delete', $data->id_buku) }}" method="POST"
-                                    class="d-inline">
+                                <form action="{{ route('admin.KategoriBuku.delete', $data->id_kategori) }}"
+                                    method="POST">
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
@@ -57,6 +52,8 @@
                     @endforeach
                 </tbody>
             </table>
+
+
         </div>
     </body>
 
