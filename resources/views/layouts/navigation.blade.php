@@ -5,42 +5,53 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a
+                        href="{{ auth()->user()->usertype == 'admin' ? route('admin.dashboard') : route('siswa.dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
-
-                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    @if (auth()->user()->usertype == 'admin')
+                        <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.KategoriBuku')" :active="request()->routeIs('admin.KategoriBuku')">
+                            {{ __('Kategori Buku') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.Buku.manage')" :active="request()->routeIs('admin.Buku.*')">
+                            {{ __('Buku') }}
+                        </x-nav-link>
+
+
+                        <x-nav-link :href="route('admin.Peminjaman.manage')" :active="request()->routeIs('admin.Peminjaman.*')">
+                            {{ __('Peminjaman') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.User.manage')" :active="request()->routeIs('admin.User.*')">
+                            {{ __('User') }}
+                        </x-nav-link>
+                    @elseif (auth()->user()->usertype == 'user')
+                        <x-nav-link :href="route('siswa.dashboard')" :active="request()->routeIs('siswa.dashboard')">
+                            {{ __('Dashboard Siswa') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
-            <div class="flex space-x-8 sm:-my-px sm:ms-1 ml-auto">
+            {{-- <div class="flex space-x-8 sm:-my-px sm:ms-1 ml-auto">
                 <x-nav-link :href="route('daftarpinjam')" :active="request()->routeIs('daftarpinjam')">
                     {{ __('Peminjaman Buku') }}
                 </x-nav-link>
-            </div>
-            {{-- <div class="flex space-x-8 sm:-my-px sm:ms-1 ml-auto">
-                <x-nav-link :href="route('peminjaman', ['id_buku' => $id_buku])" :active="request()->routeIs('peminjaman')">
-                    {{ __('Peminjaman Buku') }}
-                </x-nav-link>
             </div> --}}
 
-            {{-- <div class="flex space-x-8 sm:-my-px sm:ms-1 ml-auto">
-                <x-nav-link :href="route('peminjaman')" :active="request()->routeIs('peminjaman')">
-                    {{ __('Peminjaman Buku') }}
-                </x-nav-link>
-            </div> --}}
             {{-- <div class="flex space-x-8 sm:-my-px sm:ms-1 ml-auto">
                 <x-nav-link :href="route('pengambalian')" :active="request()->routeIs('kategori_buku')">
                     {{ __('Pengembalian Buku') }}
                 </x-nav-link>
             </div> --}}
 
-            
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">

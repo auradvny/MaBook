@@ -28,7 +28,7 @@ Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
 Route::get('/koleksi/{id_kategori}/buku', [KategoriBukuUserController::class, 'bukuByKategori'])
     ->name('koleksi')
 
-    ->middleware(['auth', 'verified']);   
+    ->middleware(['auth', 'verified']);
 
 Route::get('/pinjam/{id_buku}', [KategoriBukuUserController::class, 'pinjam'])
     ->name('pinjam')
@@ -46,9 +46,7 @@ Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
     ->name('submit')
     ->middleware(['auth', 'verified']);
 
-    Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'peminjaman'])
-    ->name('peminjaman')
-    ->middleware(['auth', 'verified']);
+
 
 
 Route::middleware('auth')->group(function () {
@@ -99,3 +97,7 @@ Route::middleware('auth', 'admin')->group(function () {
 require __DIR__ . '/auth.php';
 
 // Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+Route::middleware('auth', 'user')->group(function () {
+    Route::get('siswa/dashboard', [HomeController::class, 'index']);
+    Route::get('siswa/dashboard', [HomeController::class, 'index'])->name('siswa.dashboard');
+});
