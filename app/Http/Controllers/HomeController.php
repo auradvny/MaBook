@@ -18,9 +18,8 @@ class HomeController extends Controller
     }
 
 
-    // public function tampil()
-    // {
-    //     $KategoriBuku = KategoriBuku::Get();
-    //     return view('dashboard', compact('KategoriBuku'));
-    // }
+    public function siswaDashboard()
+    {
+        return view('siswa.dashboard');
+    }
 }

@@ -14,10 +14,11 @@ class Admin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->usertype !='admin'){
-            return redirect('dashboard');
+        if (Auth::user()->usertype != 'admin') {
+            return redirect('siswa.dashboard');
         }
         return $next($request);
     }
