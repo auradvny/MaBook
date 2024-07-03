@@ -22,8 +22,8 @@
         <thead>
          <tr> 
           <th> No </th>
-          <th> ID User</th>
-          <th> ID Buku</th>
+          <th> User</th>
+          <th> Judul Buku</th>
           <th> Tanggal Peminjaman</th>
           <th> Tanggal Pengembalian </th>
           <th> Status Peminjaman </th>
@@ -34,8 +34,8 @@
       @foreach ($Peminjaman as $data )
       
           <td> {{ $no++ }}</td>
-          <td> {{ $data->id }}</td>
-          <td>{{ $data->id_buku}} </td>
+          <td> {{ $data->User ->name }}</td>
+          <td>{{ $data->Buku ->judul_buku}} </td>
           <td> {{ $data->tanggal_peminjaman }}</td>
           <td> {{ $data->tanggal_pengembalian}}</td>
           <td> {{ $data->status_peminjaman}}</td>

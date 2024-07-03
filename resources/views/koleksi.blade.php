@@ -14,20 +14,14 @@
                 font-family: 'Roboto', sans-serif;
             }
             .header-title {
-                background-color: #f8f9fa;
+                background-color: #bdc2c6;
                 padding: 1rem;
                 border-radius: 5px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 margin-bottom: 1rem;
                 font-weight: 500;
-            }
-            .section-title {
-                background-color: #f8f9fa;
-                padding: 0.5rem;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                margin-bottom: 1rem;
-                font-weight: 500;
+                text-align: center;
+            
             }
             .table {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -46,14 +40,12 @@
         <x-slot name="header">
             <div class="header-title">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Buku dalam Kategori: {{ $KategoriBuku->nama_kategori }}
+                    Buku dalam Kategori : {{ $KategoriBuku->nama_kategori }}
                 </h2>
             </div>
         </x-slot>
         <div class="mt-3 container">
-            <div class="section-title">
-                <h4>Daftar Buku dalam Kategori: {{ $KategoriBuku->nama_kategori }}</h4>
-            </div>
+        
             @if($Buku->isEmpty())
                 <div class="alert alert-warning">
                     <p>Tidak ada buku dalam kategori ini.</p>
