@@ -9,10 +9,14 @@ use App\Http\Controllers\KategoriBukuUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\BukuPinjamController;
+use App\Http\Controllers\AdminController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 Route::get('/dashboard', [KategoriBukuUserController::class, 'tampil'])
     ->middleware(['auth', 'verified'])
@@ -72,7 +76,8 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::post('/admin/KategoriBuku/submit', [KategoriBukuController::class, 'submit'])->name('admin.KategoriBuku.submit');
     Route::get('/admin/KategoriBuku/edit/{id_kategori}', [KategoriBukuController::class, 'edit'])->name('admin.KategoriBuku.edit');
     Route::post('/admin/KategoriBuku/update/{id_kategori}', [KategoriBukuController::class, 'update'])->name('admin.KategoriBuku.update');
-    Route::post('/admin/KategoriBuku/delete/{id_kategori}', [KategoriBukuController::class, 'delete'])->name('admin.KategoriBuku.delete');
+    Route::post('/admin/KategoriBuku/delete/{id}', [KategoriBukuController::class, 'destroy'])->name('admin.KategoriBuku.delete');
+    // Route::post('/admin/KategoriBuku/delete/{id_kategori}', [KategoriBukuController::class, 'delete'])->name('admin.KategoriBuku.delete');
 
     Route::get('/admin/Buku', [BukuController::class, 'index'])->name('admin.Buku');
     Route::get('/admin/Buku/manage', [BukuController::class, 'tampil'])->name('admin.Buku.manage');
@@ -80,7 +85,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::post('/admin/Buku/submit', [BukuController::class, 'submit'])->name('admin.Buku.submit');
     Route::get('/admin/Buku/edit/{id_buku}', [BukuController::class, 'edit'])->name('admin.Buku.edit');
     Route::post('/admin/Buku/update/{id_buku}', [BukuController::class, 'update'])->name('admin.Buku.update');
-    Route::post('/admin/Buku/delete/{id_buku}', [BukuController::class, 'delete'])->name('admin.Buku.delete');
+    Route::post('/admin/Buku/delete/{id}', [BukuController::class, 'destroy'])->name('admin.Buku.delete');
 
     Route::get('/admin/User', [UserController::class, 'index'])->name('admin.User');
     Route::get('/admin/User/manage', [UserController::class, 'tampil'])->name('admin.User.manage');
