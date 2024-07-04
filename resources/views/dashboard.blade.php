@@ -8,6 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Aplikasi Perpustakaan</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
         <style>
             .card {
                 transition: transform 0.2s;
@@ -72,6 +73,8 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
           <img src=" assets/img/1.png" >
 
           <div class="container">

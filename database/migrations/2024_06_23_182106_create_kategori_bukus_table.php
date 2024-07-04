@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_kategori'); // ID Kategori Buku
             $table->string('nama_kategori'); // Nama Kategori Buku
             $table->text('deskripsi_kategori')->nullable(); // Deskripsi Kategori Buku, opsional
-            $table->string('image_url')->nullable();
+            // $table->string('image_url')->nullable();
             $table->timestamps();
         });
     }

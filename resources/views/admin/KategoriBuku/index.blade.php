@@ -27,7 +27,7 @@
                         <th>No</th>
                         <th>Nama Kategori</th>
                         <th>Deskripsi Kategori</th>
-                        <th>Gambar</th>
+                        {{-- <th>Gambar</th> --}}
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -38,8 +38,8 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->nama_kategori }}</td>
                             <td>{{ $data->deskripsi_kategori }}</td>
-                            <td><img src="{{ asset($data->image_url) }}" alt="{{ $data->nama_kategori }}"
-                                    style="width: 50px; height: 50px;"></td>
+                            {{-- <td><img src="{{ asset($data->image_url) }}" alt="{{ $data->nama_kategori }}"
+                                    style="width: 50px; height: 50px;"></td> --}}
                             <td class="d-flex">
                                 <a href="{{ route('admin.KategoriBuku.edit', $data->id_kategori) }}"
                                     class="btn btn-sm btn-warning me-2">Edit</a>
