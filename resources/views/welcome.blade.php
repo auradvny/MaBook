@@ -124,9 +124,9 @@
             <div class="container">
                 <center>
 
-                    <div class="row gy-4">
-
-                        <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row gy-4 justify-content-center align-items-center">
+                        <div class="col-xl-4 col-md-6 d-flex justify-content-center align-items-center"
+                            data-aos="fade-up" data-aos-delay="100">
                             <div class="member">
                                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                                 <h4>Sesa Ajeng Maesara</h4>
@@ -134,7 +134,8 @@
                             </div>
                         </div><!-- End Team Member -->
 
-                        <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-xl-4 col-md-6 d-flex justify-content-center align-items-center"
+                            data-aos="fade-up" data-aos-delay="200">
                             <div class="member">
                                 <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
                                 <h4>Dwita Isma Aprilia</h4>
@@ -142,7 +143,8 @@
                             </div>
                         </div><!-- End Team Member -->
 
-                        <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-xl-4 col-md-6 d-flex justify-content-center align-items-center"
+                            data-aos="fade-up" data-aos-delay="300">
                             <div class="member">
                                 <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
                                 <h4>Aura Devany Salsabila Bachtiar</h4>
