@@ -14,9 +14,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
+Route::get('/dashboard', [KategoriBukuUserController::class, 'tampil'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+    Route::get('/koleksibuku', [KategoriBukuUserController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('koleksibuku');
 
 // Route::get('/peminjamanbuku', function () {
 //     return view('peminjaman');

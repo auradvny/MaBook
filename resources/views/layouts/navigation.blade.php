@@ -33,6 +33,9 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="no-underline">
                             {{ __('Dashboard') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('koleksibuku')" :active="request()->routeIs('dashboard')" class="no-underline">
+                            {{ __('Koleksi Buku') }}
+                        </x-nav-link>
                         <x-nav-link :href="route('daftarpinjam')" :active="request()->routeIs('daftarpinjam')" class="no-underline">
                             {{ __('Peminjaman') }}
                         </x-nav-link>
