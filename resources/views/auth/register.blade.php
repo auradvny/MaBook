@@ -52,7 +52,11 @@
                 {{ __('Back') }}
             </a>
 
+
+           
+
             <x-primary-button class="ms-4">
+               <a href="{{ route('login') }}">
                 {{ __('Register') }}
             </x-primary-button>
         </div>

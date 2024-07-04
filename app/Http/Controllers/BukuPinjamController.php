@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 use Illuminate\Http\Request;
 use App\Models\Peminjaman;
+use App\Models\KategoriBuku;
 use Illuminate\Support\Facades\Auth;
 
 class BukuPinjamController extends Controller
@@ -16,6 +17,17 @@ class BukuPinjamController extends Controller
     }
 
     // Method to handle book borrowing
+
+    // public function pencarian(Request $request)
+    // {
+    //     $query = $request->input('query');
+    //     $hasilPencarian = KategoriBuku::where('nama_kategori', 'LIKE', "%{$query}%")
+                              
+    //                           ->get();
+
+    //     return view('hasil_pencarian', compact('hasilPencarian'));
+    // }
+
 
     public function submit(Request $request)
     {

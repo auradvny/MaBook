@@ -50,6 +50,9 @@ Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'index'])
     ->name('peminjaman')
     ->middleware(['auth', 'verified']);
 
+
+    Route::get('/pencarian/{id_kategori)', [BukuPinjamController::class, 'pencarian'])->name('pencarian');
+
 // Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
 //     ->name('submit')
 //     ->middleware(['auth', 'verified']);

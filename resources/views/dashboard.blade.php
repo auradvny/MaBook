@@ -114,14 +114,7 @@
                         </div>
                     </div>
         
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4 style="color: white;">Useful Links</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li><a href="#hero" style="color: #a0c4ff;">Home</a></li>
-                            <li><a href="#team" style="color: #a0c4ff;">Team</a></li>
-                            <li><a href="#contact" style="color: #a0c4ff;">Contact</a></li>
-                        </ul>
-                    </div>
+                    
         
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4 style="color: white;">Our Team</h4>

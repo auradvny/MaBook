@@ -44,8 +44,8 @@
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
             <a href="#hero" class="logo d-flex align-items-center me-auto">
-                <img src="assets/img/logo.png" alt="">
-                <h1 class="sitename">MaBook</h1>
+                <img src="assets/img/Logo (2).png" alt="">
+                
             </a>
 
 
