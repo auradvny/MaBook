@@ -104,7 +104,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-6 footer-about">
                         <a href="index.html" class="logo d-flex align-items-center">
-                            <span class="sitename" style="color: white; font-size: 1.5em; font-weight: bold;">QuickStart</span>
+                            <span class="sitename" style="color: white; font-size: 1.5em; font-weight: bold;">Alamat</span>
                         </a>
                         <div class="footer-contact pt-3">
                             <p>Jl. Raya Ajibarang Km. 1 Ajibarang,</p>
@@ -122,19 +122,11 @@
                             <li><a href="https://www.instagram.com/" target="_blank" style="color: #a0c4ff;">Sesa Ajeng Maesara</a></li>
                             <li><a href="https://www.instagram.com/" target="_blank" style="color: #a0c4ff;">Dwita Isma Aprilia</a></li>
                             <li><a href="https://www.instagram.com/" target="_blank" style="color: #a0c4ff;">Aura Devany Salsabila Bachtiar</a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank" style="color: #a0c4ff;">Amanda Jepson</a></li>
+                            
                         </ul>
                     </div>
         
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4 style="color: white;">Follow our social media</h4>
-                        <div class="social-links d-flex mt-4">
-                            <a href="https://x.com/" target="_blank" style="color: #a0c4ff; margin-right: 10px;"><i class="bi bi-twitter-x"></i></a>
-                            <a href="https://www.facebook.com/people/Smkmanusaajibarang/pfbid02xkAWBhhsQ8wcD5dEKKTZjaU9icmYJHtGy9x2hnTjyo3VGBwDA38h9WWWv8Bz4bel/" target="_blank" style="color: #a0c4ff; margin-right: 10px;"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com/smk_maarif_nu_1_ajibarang/" target="_blank" style="color: #a0c4ff; margin-right: 10px;"><i class="bi bi-instagram"></i></a>
-                            <a href="https://www.youtube.com/c/SMKMaarifNU1Ajibarang" target="_blank" style="color: #a0c4ff;"><i class="bi bi-youtube"></i></a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         
