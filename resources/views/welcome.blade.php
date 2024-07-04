@@ -45,7 +45,7 @@
 
             <a href="#hero" class="logo d-flex align-items-center me-auto">
                 <img src="assets/img/Logo (2).png" alt="">
-                
+
             </a>
 
 
@@ -121,34 +121,35 @@
                 </p>
             </div><!-- End Section Title -->
 
-            <div class="container"><center>
+            <div class="container">
+                <center>
 
-                <div class="row gy-4" > 
+                    <div class="row gy-4">
 
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <h4>Sesa Ajeng Maesara</h4>
-                            <span>H1D022027</span>
-                        </div>
-                    </div><!-- End Team Member -->
+                        <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member">
+                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <h4>Sesa Ajeng Maesara</h4>
+                                <span>H1D022027</span>
+                            </div>
+                        </div><!-- End Team Member -->
 
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                            <h4>Dwita Isma Aprilia</h4>
-                            <span>H1D022034</span>
-                        </div>
-                    </div><!-- End Team Member -->
+                        <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member">
+                                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <h4>Dwita Isma Aprilia</h4>
+                                <span>H1D022034</span>
+                            </div>
+                        </div><!-- End Team Member -->
 
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                            <h4>Aura Devany Salsabila Bachtiar</h4>
-                            <span>H1D022015</span>
-                        </div>
-                    </div><!-- End Team Member -->
-{{-- 
+                        <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <div class="member">
+                                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <h4>Aura Devany Salsabila Bachtiar</h4>
+                                <span>H1D022015</span>
+                            </div>
+                        </div><!-- End Team Member -->
+                        {{-- 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
                         <div class="member">
                             <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
@@ -157,7 +158,7 @@
                         </div>
                     </div><!-- End Team Member --> --}}
 
-                </div>
+                    </div>
 
             </div>
 
@@ -266,7 +267,7 @@
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Follow our social media</h4>
                     <div class="social-links d-flex mt-4">
-                       
+
                         <a href="https://www.facebook.com/people/Smkmanusaajibarang/pfbid02xkAWBhhsQ8wcD5dEKKTZjaU9icmYJHtGy9x2hnTjyo3VGBwDA38h9WWWv8Bz4bel/"
                             target="_blank"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/smk_maarif_nu_1_ajibarang/" target="_blank"><i
