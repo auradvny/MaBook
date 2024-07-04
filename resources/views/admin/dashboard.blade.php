@@ -20,18 +20,18 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-lg-6 mb-4">
-                    <div class="card text-white bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">Jumlah Buku</h5>
-                            <p class="card-text">{{ $jumlahBuku }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
                     <div class="card text-white bg-success">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Siswa</h5>
                             <p class="card-text">{{ $jumlahSiswa }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card text-white bg-primary">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Buku</h5>
+                            <p class="card-text">{{ $jumlahBuku }}</p>
                         </div>
                     </div>
                 </div>

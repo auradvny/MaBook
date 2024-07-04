@@ -17,7 +17,7 @@
             </h2>
         </x-slot>
         <div class="container mt-3">
-            <h4>List User</h4>
+            <h4>List Siswa</h4>
             <div class="d-flex justify-content-end mb-3">
                 <a class="btn btn-success" href="{{ route('admin.User.create') }}">Tambah</a>
             </div>
@@ -27,21 +27,57 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Usertype</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1; ?>
-                    @foreach ($User as $data)
+                    @foreach ($siswa as $data)
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->email }}</td>
-                            <td>{{ $data->usertype }}</td>
                             <td class="d-flex">
-                                <a href="{{ route('admin.User.edit', $data->id) }}" class="btn btn-sm btn-warning me-2">Edit</a>
-                                <form action="{{ route('admin.User.delete', $data->id) }}" method="POST" class="d-inline">
+                                <a href="{{ route('admin.User.edit', $data->id) }}"
+                                    class="btn btn-sm btn-warning me-2">Edit</a>
+                                <form action="{{ route('admin.User.delete', $data->id) }}" method="POST"
+                                    class="d-inline">
+                                    @csrf
+                                    <button class="btn btn-sm btn-danger">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container mt-3">
+            <h4>List Admin</h4>
+            <div class="d-flex justify-content-end mb-3">
+                <a class="btn btn-success" href="{{ route('admin.User.create') }}">Tambah</a>
+            </div>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 1; ?>
+                    @foreach ($admin as $data)
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->email }}</td>
+                            <td class="d-flex">
+                                <a href="{{ route('admin.User.edit', $data->id) }}"
+                                    class="btn btn-sm btn-warning me-2">Edit</a>
+                                <form action="{{ route('admin.User.delete', $data->id) }}" method="POST"
+                                    class="d-inline">
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Hapus</button>
                                 </form>

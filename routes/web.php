@@ -90,7 +90,9 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::post('/admin/Buku/delete/{id}', [BukuController::class, 'destroy'])->name('admin.Buku.delete');
 
     Route::get('/admin/User', [UserController::class, 'index'])->name('admin.User');
+    // Route::get('/admin/User/manage', [UserController::class, 'tampil'])->name('admin.User.manage');
     Route::get('/admin/User/manage', [UserController::class, 'tampil'])->name('admin.User.manage');
+
     Route::get('/admin/User/create', [UserController::class, 'create'])->name('admin.User.create');
     Route::post('/admin/User/submit', [UserController::class, 'submit'])->name('admin.User.submit');
     Route::get('/admin/User/edit/{id}', [UserController::class, 'edit'])->name('admin.User.edit');
