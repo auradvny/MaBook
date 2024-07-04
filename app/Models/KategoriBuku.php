@@ -17,7 +17,7 @@ class KategoriBuku extends Model
     protected $fillable = [
         'nama_kategori',
         'deskripsi_kategori',
-        'image_url',
+        // 'image_url',
     ];
 
     public function Buku()

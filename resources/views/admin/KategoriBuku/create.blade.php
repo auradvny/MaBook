@@ -22,7 +22,7 @@
                     <div class="p-6 text-gray-900">
                         <h1 class="mb-0"> Tambah Kategori Buku </h1>
 
-                        <form action="{{ route('admin.KategoriBuku.submit') }}" method="POST" enctype="multipart/form-data>
+                        <form action="{{ route('admin.KategoriBuku.submit') }}" method="POST">
                             @csrf
                             <label> Nama Kategori </label>
                             <input type=" text " name="nama_kategori" class="form-control mb-2">

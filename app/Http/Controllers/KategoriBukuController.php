@@ -60,10 +60,10 @@ class KategoriBukuController extends Controller
         $KategoriBuku->deskripsi_kategori = $request->deskripsi_kategori;
         // $KategoriBuku->image_url = $request->image_url;
 
-        if ($request->hasFile('image_url')) {
-            $imagePath = $request->file('image_url')->store('kategori_images', 'public');
-            $KategoriBuku->image_url = Storage::url($imagePath);
-        }
+        // if ($request->hasFile('image_url')) {
+        //     $imagePath = $request->file('image_url')->store('kategori_images', 'public');
+        //     $KategoriBuku->image_url = Storage::url($imagePath);
+        // }
 
         $KategoriBuku->save();
 

@@ -40,16 +40,22 @@
                 display: flex;
                 gap: 0.5rem;
             }
+            .table th{
+                background-color: #00687f; /* Warna biru tosca */
+                color: white; /* Teks putih */
+            }
         </style>
     </head>
 
     <body>
         <x-slot name="header">
-            <div class="header-title">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Koleksi Buku  : {{ $KategoriBuku->nama_kategori }}
+         
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight  ">
+                    <h1> <b>  <font face="Times New Roman, Helvetica, sans-serif" size="6" color="Black"  text-align: center;> <center> 
+                
+                    Koleksi Buku  : {{ $KategoriBuku->nama_kategori }} </center></font></b>
                 </h2>
-            </div>
+            
         </x-slot>
         <div class="mt-3 container">
 
@@ -59,14 +65,14 @@
                 </div>
             @else
                 <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
+                    <thead class="table-dark" >
                         <tr>
-                            <th>No</th>
-                            <th>Judul Buku</th>
-                            <th>Penulis</th>
-                            <th>Tahun Terbit</th>
-                            <th>Jumlah Halaman</th>
-                            <th>Aksi</th>
+                            <th><center>No</th>
+                            <th><center>Judul Buku</th>
+                            <th><center>Penulis</th>
+                            <th><center>Tahun Terbit</th>
+                            <th><center>Jumlah Halaman</th>
+                            <th><center>Keterangan </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,8 +84,7 @@
                                 <td>{{ $data->tahun_terbit }}</td>
                                 <td>{{ $data->jumlah_halaman }}</td>
                                 <td class="action-btns">
-                                    <a href="{{ route('pinjam', ['id_buku' => $data->id_buku]) }}"
-                                        class="btn btn-primary">Pinjam</a>
+                                    <a href="{{ route('pinjam', ['id_buku' => $data->id_buku]) }}" class="btn btn-primary" center >Pinjam</a>
                                 </td>
                             </tr>
                         @endforeach

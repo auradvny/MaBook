@@ -9,15 +9,20 @@
         <title>Aplikasi Perpustakaan</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
     </head>
-
+<style>
+ .table th{
+                background-color: #00687f; /* Warna biru tosca */
+                color: white; /* Teks putih */
+            }
+            </style>
     <body>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('PENGEMBALIAN') }}
+                <h1> <b>  <font face="Times New Roman, Helvetica, sans-serif" size="6" color="Black"  text-align: center;> <center> 
+                {{ __('DAFTAR PENGEMBALIAN BUKU') }}</center></font></b>
             </h2>
         </x-slot>
         <div class="mt-3 container">
-            <h4>Daftar Pengembalian Buku</h4>
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
