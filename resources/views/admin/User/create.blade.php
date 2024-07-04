@@ -20,18 +20,19 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        <h1 class="mb-0"> Edit User </h1>
+                        <h1 class="mb-0"> Tambah Siswa </h1>
 
-                        <form action="{{ route('admin.User.update', $User->id) }}" method="POST">
+                        <form action="{{ route('admin.KategoriBuku.submit') }}" method="POST">
                             @csrf
-                            <label> Nama </label>
-                            <input type=" text " name="name" value=" {{ $User->name }}" class="form-control mb-2">
-                            <label> Email</label>
-                            <input type=" text " name="email" value=" {{ $User->email }}" class="form-control mb-2">
-                            <label> Usertype </label>
-                            <input type=" text " name="usertype" value=" {{ $User->usertype }}"
-                                class="form-control mb-2" disabled>
-                            <button class="btn btn-primary">Edit</button>
+                            <label> Nama Siswa </label>
+                            <input type=" text " name="nama_kategori" class="form-control mb-2">
+                            <label> Deskripsi Kategori</label>
+                            <input type=" text " name="deskripsi_kategori" class="form-control mb-2">
+                            <label> Gambar</label>
+                            <input type="file" name="image_url" class="form-control mb-2" accept=".png, .jpg, .jpeg">
+
+
+                            <button class="btn btn-primary">Tambah</button>
                         </form>
                     </div>
                 </div>

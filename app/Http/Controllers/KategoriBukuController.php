@@ -6,6 +6,7 @@ use App\Models\Buku;
 use Illuminate\View\View;
 use App\Models\KategoriBuku;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KategoriBukuController extends Controller
 {
@@ -29,13 +30,19 @@ class KategoriBukuController extends Controller
         $KategoriBuku = new KategoriBuku();
         $KategoriBuku->nama_kategori = $request->nama_kategori;
         $KategoriBuku->deskripsi_kategori = $request->deskripsi_kategori;
-        // $KategoriBuku-> image_url =$request-> image_url;
+        // $KategoriBuku->image_url = $request->image_url;
+
+        if ($request->hasFile('image_url')) {
+            $imagePath = $request->file('image_url')->store('kategori_images', 'public');
+            $KategoriBuku->image_url = Storage::url($imagePath);
+        }
+
         $KategoriBuku->save();
 
         $request->validate([
             'nama_kategori' => 'required|string|max:255',
             'deskripsi_kategori' => 'nullable|string',
-            // 'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);
 

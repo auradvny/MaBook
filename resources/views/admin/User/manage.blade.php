@@ -18,16 +18,16 @@
         </x-slot>
         <div class="container mt-3">
             <h4>List Siswa</h4>
-            <div class="d-flex justify-content-end mb-3">
+            {{-- <div class="d-flex justify-content-end mb-3">
                 <a class="btn btn-success" href="{{ route('admin.User.create') }}">Tambah</a>
-            </div>
+            </div> --}}
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Aksi</th>
+                        {{-- <th>Aksi</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +37,7 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->email }}</td>
-                            <td class="d-flex">
+                            {{-- <td class="d-flex">
                                 <a href="{{ route('admin.User.edit', $data->id) }}"
                                     class="btn btn-sm btn-warning me-2">Edit</a>
                                 <form action="{{ route('admin.User.delete', $data->id) }}" method="POST"
@@ -45,7 +45,7 @@
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>
@@ -54,16 +54,16 @@
 
         <div class="container mt-3">
             <h4>List Admin</h4>
-            <div class="d-flex justify-content-end mb-3">
-                <a class="btn btn-success" href="{{ route('admin.User.create') }}">Tambah</a>
-            </div>
+            {{-- <div class="d-flex justify-content-end mb-3">
+                <a class="btn btn-success" href="{{ route('admin.Admin.create') }}">Tambah</a>
+            </div> --}}
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Aksi</th>
+                        {{-- <th>Aksi</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->email }}</td>
-                            <td class="d-flex">
+                            {{-- <td class="d-flex">
                                 <a href="{{ route('admin.User.edit', $data->id) }}"
                                     class="btn btn-sm btn-warning me-2">Edit</a>
                                 <form action="{{ route('admin.User.delete', $data->id) }}" method="POST"
@@ -81,7 +81,7 @@
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>
