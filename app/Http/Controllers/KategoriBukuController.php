@@ -24,6 +24,34 @@ class KategoriBukuController extends Controller
         return view('admin.KategoriBuku.create');
     }
 
+
+    // public function submit(Request $request)
+    // {
+    //     // Validasi input
+    //     $request->validate([
+    //         'nama_kategori' => 'required|string|max:255',
+    //         'deskripsi_kategori' => 'nullable|string',
+    //         'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //     ]);
+
+    //     // Membuat instance baru dari KategoriBuku
+    //     $KategoriBuku = new KategoriBuku();
+    //     $KategoriBuku->nama_kategori = $request->nama_kategori;
+    //     $KategoriBuku->deskripsi_kategori = $request->deskripsi_kategori;
+
+    //     // Mengupload gambar jika ada
+    //     if ($request->hasFile('image_url')) {
+    //         $imagePath = $request->file('image_url')->store('kategori_images', 'public');
+    //         $KategoriBuku->image_url = Storage::url($imagePath);
+    //     }
+
+    //     // Menyimpan data ke database
+    //     $KategoriBuku->save();
+
+    //     // Redirect setelah menyimpan data
+    //     return redirect()->route('admin.KategoriBuku');
+    // }
+
     // Store a new category
     public function submit(Request $request)
     {

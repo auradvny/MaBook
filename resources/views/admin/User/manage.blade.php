@@ -52,7 +52,7 @@
             </table>
         </div>
 
-        <div class="container mt-3">
+        <div class="container mt-5">
             <h4>List Admin</h4>
             {{-- <div class="d-flex justify-content-end mb-3">
                 <a class="btn btn-success" href="{{ route('admin.Admin.create') }}">Tambah</a>

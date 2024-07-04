@@ -46,11 +46,11 @@
 
                             <label for="tanggal_peminjaman">Tanggal Peminjaman</label>
                             <input type="date" name="tanggal_peminjaman" class="form-control mb-2"
-                                value="{{ $Peminjaman->tanggal_peminjaman }}">
+                                value="{{ $Peminjaman->tanggal_peminjaman }}" disabled>
 
                             <label for="tanggal_pengembalian">Tanggal Pengembalian</label>
                             <input type="date" name="tanggal_pengembalian" class="form-control mb-2"
-                                value="{{ $Peminjaman->tanggal_pengembalian }}">
+                                value="{{ $Peminjaman->tanggal_pengembalian }}" disabled>
 
                             <div class="form-group">
                                 <label for="status_peminjaman">Status Peminjaman :</label>

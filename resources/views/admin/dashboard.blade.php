@@ -19,7 +19,15 @@
 
         <div class="container mt-4">
             <div class="row">
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-white bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Admin</h5>
+                            <p class="card-text">{{ $jumlahAdmin }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
                     <div class="card text-white bg-success">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Siswa</h5>
@@ -27,7 +35,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-white bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Kategori</h5>
+                            <p class="card-text">{{ $jumlahKategori }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
                     <div class="card text-white bg-primary">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Buku</h5>
@@ -35,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="card text-white bg-warning">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Peminjaman</h5>
@@ -43,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="card text-white bg-info">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Pengembalian</h5>

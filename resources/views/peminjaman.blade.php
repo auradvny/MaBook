@@ -15,7 +15,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('PEMINJAMAN') }}
             </h2>
-     
+        </x-slot>
         <div class="mt-3 container">
             <h4>Daftar Peminjaman Buku</h4>
             <table class="table table-striped table-bordered">
@@ -41,7 +41,7 @@
                     @endforeach
                 </tbody>
             </table>
-        </x-slot>
+
         </div>
     </body>
 

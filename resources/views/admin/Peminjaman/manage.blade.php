@@ -19,7 +19,7 @@
 
         <div class="mt-3 container">
             <h4>List Peminjaman</h4>
-            <div class="ms-auto mb-3">
+            <div class="d-flex justify-content-end mb-3">
                 <a class="btn btn-success" href="{{ route('admin.Peminjaman.create') }}">Tambah</a>
             </div>
             <table class="table table-striped">
@@ -60,7 +60,7 @@
             </table>
         </div>
 
-        <div class="mt-3 container">
+        <div class="mt-5 container">
             <h4>List Pengembalian</h4>
             <table class="table table-striped">
                 <thead>
@@ -70,6 +70,7 @@
                         <th>Judul Buku</th>
                         <th>Tanggal Peminjaman</th>
                         <th>Tanggal Dikembalikan</th>
+                        <th>Denda</th>
                         <th>Status Peminjaman</th>
                     </tr>
                 </thead>
@@ -82,6 +83,7 @@
                             <td>{{ $data->Buku->judul_buku }}</td>
                             <td>{{ $data->tanggal_peminjaman }}</td>
                             <td>{{ $data->updated_at }}</td>
+                            <td>Rp. {{ $data->denda }}</td>
                             <td>{{ $data->status_peminjaman }}</td>
                         </tr>
                     @endforeach
