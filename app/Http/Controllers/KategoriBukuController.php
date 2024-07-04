@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\KategoriBuku;
+use App\Models\Buku;
 use Illuminate\View\View;
+use App\Models\KategoriBuku;
+use Illuminate\Http\Request;
 
 class KategoriBukuController extends Controller
 {
@@ -38,7 +39,7 @@ class KategoriBukuController extends Controller
 
         ]);
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.KategoriBuku');
     }
 
     function edit($id_kategori)
@@ -54,13 +55,24 @@ class KategoriBukuController extends Controller
         // $KategoriBuku-> image_url =$request-> image_url;
         $KategoriBuku->update();
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.KategoriBuku');
     }
 
-    function delete($id_kategori)
+    public function destroy($id)
     {
-        $KategoriBuku = KategoriBuku::find($id_kategori);
-        $KategoriBuku->delete();
-        return redirect()->route('admin.dashboard');
+        // Set kategori_id menjadi null (atau nilai default) di tabel buku yang terkait dengan kategori
+        Buku::where('kategori_id', $id)->delete();
+
+        // Hapus kategori buku
+        KategoriBuku::destroy($id);
+
+        return redirect()->route('admin.KategoriBuku')->with('success', 'Kategori Buku dan data buku terkait berhasil diperbarui');
     }
+
+    // function delete($id_kategori)
+    // {
+    //     $KategoriBuku = KategoriBuku::find($id_kategori);
+    //     $KategoriBuku->delete();
+    //     return redirect()->route('admin.dashboard');
+    // }
 }

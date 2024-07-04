@@ -72,7 +72,8 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::post('/admin/KategoriBuku/submit', [KategoriBukuController::class, 'submit'])->name('admin.KategoriBuku.submit');
     Route::get('/admin/KategoriBuku/edit/{id_kategori}', [KategoriBukuController::class, 'edit'])->name('admin.KategoriBuku.edit');
     Route::post('/admin/KategoriBuku/update/{id_kategori}', [KategoriBukuController::class, 'update'])->name('admin.KategoriBuku.update');
-    Route::post('/admin/KategoriBuku/delete/{id_kategori}', [KategoriBukuController::class, 'delete'])->name('admin.KategoriBuku.delete');
+    Route::post('/admin/KategoriBuku/delete/{id}', [KategoriBukuController::class, 'destroy'])->name('admin.KategoriBuku.delete');
+    // Route::post('/admin/KategoriBuku/delete/{id_kategori}', [KategoriBukuController::class, 'delete'])->name('admin.KategoriBuku.delete');
 
     Route::get('/admin/Buku', [BukuController::class, 'index'])->name('admin.Buku');
     Route::get('/admin/Buku/manage', [BukuController::class, 'tampil'])->name('admin.Buku.manage');
