@@ -33,8 +33,12 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
+<<<<<<< HEAD
             <x-input-label for="password_confirmation" :value="__('Konfirmasi Password')" />
 
+=======
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+>>>>>>> c0b615a4fb6de30e98fa0307bacb7ce4d931d8e3
             <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password"
                 name="password_confirmation" required autocomplete="new-password" />
 
@@ -46,6 +50,7 @@
                 href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
+<<<<<<< HEAD
           
            
             <div class="flex items-center">
@@ -55,6 +60,15 @@
                 <x-primary-button class="ms-3">
                     <a href="{{ route('login') }}">
                         {{ __('Register') }}
+=======
+
+            <div class="flex items-center ml-auto">
+                <a href="{{ url()->previous() }}" class="btn btn-light-gray me-3">
+                    {{ __('Back') }}
+                </a>
+                <x-primary-button class="ml-3">
+                    {{ __('Log in') }}
+>>>>>>> c0b615a4fb6de30e98fa0307bacb7ce4d931d8e3
                 </x-primary-button>
             </div>
         </div>
