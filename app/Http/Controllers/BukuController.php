@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\View\View;
-use App\Models\KategoriBuku;
 use App\Models\Buku;
+use Illuminate\View\View;
+use App\Models\Peminjaman;
+use App\Models\KategoriBuku;
+use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
@@ -32,38 +33,41 @@ class BukuController extends Controller
     public function submit(Request $request)
     {
         $Buku = new Buku();
-        $Buku-> judul_buku =$request-> judul_buku;
-        $Buku-> penulis_buku =$request-> penulis_buku;
-        $Buku-> tahun_terbit =$request-> tahun_terbit;
-        $Buku-> jumlah_halaman =$request-> jumlah_halaman;
-        $Buku->kategori_id = $request->kategori_id; 
+        $Buku->judul_buku = $request->judul_buku;
+        $Buku->penulis_buku = $request->penulis_buku;
+        $Buku->tahun_terbit = $request->tahun_terbit;
+        $Buku->jumlah_halaman = $request->jumlah_halaman;
+        $Buku->kategori_id = $request->kategori_id;
         $Buku->save();
-    
 
-    return redirect()-> route ('admin.Buku.manage')->with('success', 'Buku berhasil ditambahkan');
+
+        return redirect()->route('admin.Buku.manage')->with('success', 'Buku berhasil ditambahkan');
     }
-    function edit($id_buku){
-        $Buku=Buku::find($id_buku);
+    function edit($id_buku)
+    {
+        $Buku = Buku::find($id_buku);
         return view('admin.Buku.edit', compact('Buku'));
     }
-    function update( Request $request, $id_buku){
-        $Buku=Buku::find($id_buku);
-        $Buku-> judul_buku =$request-> judul_buku;
-        $Buku-> penulis_buku =$request-> penulis_buku;
-        $Buku-> tahun_terbit =$request-> tahun_terbit;
-        $Buku-> jumlah_halaman =$request-> jumlah_halaman;
+    function update(Request $request, $id_buku)
+    {
+        $Buku = Buku::find($id_buku);
+        $Buku->judul_buku = $request->judul_buku;
+        $Buku->penulis_buku = $request->penulis_buku;
+        $Buku->tahun_terbit = $request->tahun_terbit;
+        $Buku->jumlah_halaman = $request->jumlah_halaman;
         $Buku->update();
 
-    return redirect()-> route ('admin.Buku.manage');
+        return redirect()->route('admin.Buku.manage');
     }
 
-    function delete($id_buku){
-        $Buku=Buku::find($id_buku);
-        $Buku->delete();
-        return redirect()-> route ('admin.Buku.manage');
+    public function destroy($id)
+    {
+        // Hapus data di tabel peminjaman yang terkait dengan buku
+        Peminjaman::where('buku_id', $id)->delete();
+
+        // Hapus data buku
+        Buku::destroy($id);
+
+        return redirect()->route('admin.Buku.manage')->with('success', 'Buku dan data peminjaman terkait berhasil dihapus');
     }
-    
-    }
-
-
-
+}
