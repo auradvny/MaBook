@@ -13,7 +13,7 @@
     <body>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Peminjaman') }}
+                {{ __('PENGEMBALIAN') }}
             </h2>
         </x-slot>
         <div class="mt-3 container">
