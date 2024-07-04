@@ -30,7 +30,7 @@ class KategoriBukuController extends Controller
         $KategoriBuku = new KategoriBuku();
         $KategoriBuku->nama_kategori = $request->nama_kategori;
         $KategoriBuku->deskripsi_kategori = $request->deskripsi_kategori;
-        // $KategoriBuku->image_url = $request->image_url;
+        $KategoriBuku->image_url = $request->image_url;
 
         if ($request->hasFile('image_url')) {
             $imagePath = $request->file('image_url')->store('kategori_images', 'public');

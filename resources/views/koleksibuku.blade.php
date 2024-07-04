@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         <style>
+            
              .text-center {
                 text-align: center;
             }
@@ -45,6 +46,7 @@
             .custom-card .btn:hover {
                 background-color: #e2e6ea;
             }
+           
         </style>
           <style>
             .font-montserrat {
@@ -55,9 +57,11 @@
 
     <body>
         <x-slot name="header">
+            
             <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center ">
-                <h1> <b>  <font face="Comic Sans MS, Helvetica, sans-serif" size="9" color="Black"  text-align: center;> <center> KOLEKSI BUKU</center></font></b></h1>
+                <h1> <b>  <font face="Times New Roman, Helvetica, sans-serif" size="9" color="Black"  text-align: center;> <center> KOLEKSI BUKU</center></font></b></h1>
             </h2>
+            <p>  <font face="Corbel Light, Helvetica, sans-serif" size="3" color="Black"  text-align: center;> <center> Perpustakaan SMK Ma'arif NU 1 Ajibarang menyediakan berbagai jenis buku yang dapat kalian pinjam! </p>
             <div class="container mt-5">
        
                 <div class="row">

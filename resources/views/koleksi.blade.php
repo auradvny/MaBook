@@ -47,7 +47,7 @@
         <x-slot name="header">
             <div class="header-title">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Buku dalam Kategori : {{ $KategoriBuku->nama_kategori }}
+                    Koleksi Buku  : {{ $KategoriBuku->nama_kategori }}
                 </h2>
             </div>
         </x-slot>

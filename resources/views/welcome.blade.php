@@ -121,9 +121,9 @@
                 </p>
             </div><!-- End Section Title -->
 
-            <div class="container">
+            <div class="container"><center>
 
-                <div class="row gy-4">
+                <div class="row gy-4" > 
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
@@ -148,14 +148,14 @@
                             <span>H1D022015</span>
                         </div>
                     </div><!-- End Team Member -->
-
+{{-- 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
                         <div class="member">
                             <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
                             <h4>Amanda Jepson</h4>
                             <span>Accountant</span>
                         </div>
-                    </div><!-- End Team Member -->
+                    </div><!-- End Team Member --> --}}
 
                 </div>
 
@@ -257,7 +257,7 @@
                         <li><a href="https://www.instagram.com/" target="_blank">Dwita Isma Aprilia</a></li>
                         <li><a href="https://www.instagram.com/" target="_blank">Aura Devany Salsabila Bachtiar</a>
                         </li>
-                        <li><a href="https://www.instagram.com/" target="_blank">Amanda Jepson</a></li>
+                        {{-- <li><a href="https://www.instagram.com/" target="_blank">Amanda Jepson</a></li> --}}
                         {{-- <li>Marketing</a></li>
                         <li>Graphic Design</a></li> --}}
                     </ul>
@@ -266,7 +266,7 @@
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Follow our social media</h4>
                     <div class="social-links d-flex mt-4">
-                        <a href="https://x.com/" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                       
                         <a href="https://www.facebook.com/people/Smkmanusaajibarang/pfbid02xkAWBhhsQ8wcD5dEKKTZjaU9icmYJHtGy9x2hnTjyo3VGBwDA38h9WWWv8Bz4bel/"
                             target="_blank"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/smk_maarif_nu_1_ajibarang/" target="_blank"><i
