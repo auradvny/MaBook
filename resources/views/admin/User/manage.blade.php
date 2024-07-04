@@ -24,9 +24,9 @@
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Email</th>
+                        <th><center>No</th>
+                        <th><center>Nama</th>
+                        <th><center>Email</th>
                         {{-- <th>Aksi</th> --}}
                     </tr>
                 </thead>
@@ -60,9 +60,9 @@
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Email</th>
+                        <th><center>No</th>
+                        <th><center>Nama</th>
+                        <th><center>Email</th>
                         {{-- <th>Aksi</th> --}}
                     </tr>
                 </thead>

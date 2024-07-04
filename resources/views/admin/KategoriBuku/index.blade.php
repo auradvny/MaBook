@@ -17,7 +17,7 @@
             </h2>
         </x-slot>
         <div class="container mt-3">
-            <h4>List Kategori Buku</h4>
+            
             <div class="d-flex justify-content-end mb-3">
                 <a class="btn btn-success" href="{{ route('admin.KategoriBuku.create') }}">Tambah</a>
             </div>

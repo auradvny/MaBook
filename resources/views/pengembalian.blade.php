@@ -26,12 +26,12 @@
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
-                        <th>No</th>
-                        <th>Judul Buku</th>
-                        <th>Tanggal Peminjaman</th>
-                        <th>Tanggal Dikembalikan</th>
-                        <th>Denda</th>
-                        <th>Status Peminjaman</th>
+                        <th><center> No</th>
+                        <th><center>Judul Buku</th>
+                        <th><center>Tanggal Peminjaman</th>
+                        <th><center>Tanggal Dikembalikan</th>
+                        <th><center>Denda</th>
+                        <th><center>Status Peminjaman</th>
                     </tr>
                 </thead>
                 <tbody>

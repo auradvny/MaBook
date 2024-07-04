@@ -29,7 +29,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
-                        <th>Judul Buku</th>
+                        <th><center> Judul Buku</th>
                         <th>Tanggal Peminjaman</th>
                         <th>Tanggal Pengembalian</th>
                         <th>Status Peminjaman</th>

@@ -107,9 +107,10 @@
             <div class="form-group">
                 <label for="tanggal_peminjaman">Tanggal Pinjam</label>
                 <input type="date" name="tanggal_peminjaman" class="form-control mb-2" required>
-            </div>
-            </div>
+         
             <button class="btn btn-primary">Pinjam</button>
+            
+
         </form>
         {{-- <tr> 
                         <th> Tanggal Pinjam </th>
