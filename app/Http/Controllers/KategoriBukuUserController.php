@@ -14,9 +14,14 @@ class KategoriBukuUserController extends Controller
     public function index()
     {
         $KategoriBuku = KategoriBuku::all(); // Mengambil semua data kategori buku
-        return view('dashboard', compact('KategoriBuku')); // Mengirimkan data ke view 'kategori.index'
+        return view('koleksibuku', compact('KategoriBuku')); // Mengirimkan data ke view 'kategori.index'
     }
 
+public function tampil()
+    {
+       
+        return view('dashboard');
+    }
     public function bukuByKategori($id_kategori)
     {
         $userId = Auth::id(); // Mendapatkan ID user yang sedang login
