@@ -22,7 +22,7 @@ Route::get('/dashboard', [KategoriBukuUserController::class, 'tampil'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-    Route::get('/koleksibuku', [KategoriBukuUserController::class, 'index'])
+Route::get('/koleksibuku', [KategoriBukuUserController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('koleksibuku');
 
@@ -69,8 +69,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth', 'admin')->group(function () {
-    Route::get('admin/dashboard', [HomeController::class, 'index']);
-    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+    // Route::get('admin/dashboard', [HomeController::class, 'index']);
+    // Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+
     Route::get('/admin/KategoriBuku', [KategoriBukuController::class, 'index'])->name('admin.KategoriBuku');
     Route::get('/admin/KategoriBuku/create', [KategoriBukuController::class, 'create'])->name('admin.KategoriBuku.create');
     Route::post('/admin/KategoriBuku/submit', [KategoriBukuController::class, 'submit'])->name('admin.KategoriBuku.submit');

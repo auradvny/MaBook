@@ -23,15 +23,31 @@
                     <div class="card text-white bg-primary">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Buku</h5>
-                            {{-- <p class="card-text">{{ $jumlahBuku }}</p> --}}
+                            <p class="card-text">{{ $jumlahBuku }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="card text-white bg-success">
                         <div class="card-body">
-                            <h5 class="card-title">Jumlah User</h5>
-                            {{-- <p class="card-text">{{ $id_user }}</p> --}}
+                            <h5 class="card-title">Jumlah Siswa</h5>
+                            <p class="card-text">{{ $jumlahSiswa }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card text-white bg-warning">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Peminjaman</h5>
+                            <p class="card-text">{{ $jumlahPeminjaman }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card text-white bg-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Pengembalian</h5>
+                            <p class="card-text">{{ $jumlahPengembalian }}</p>
                         </div>
                     </div>
                 </div>
