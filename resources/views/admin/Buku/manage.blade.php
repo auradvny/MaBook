@@ -26,11 +26,11 @@
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
+                        <th>Kategori Buku</th>
                         <th>Judul Buku</th>
                         <th>Penulis</th>
                         <th>Tahun Terbit</th>
                         <th>Jumlah Halaman</th>
-                        <th>Kategori Buku</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -39,11 +39,11 @@
                     @foreach ($Buku as $data)
                         <tr>
                             <td>{{ $no++ }}</td>
+                            <td>{{ $data->kategori->nama_kategori ?? 'Tidak ada kategori' }}</td>
                             <td>{{ $data->judul_buku }}</td>
                             <td>{{ $data->penulis_buku }}</td>
                             <td>{{ $data->tahun_terbit }}</td>
                             <td>{{ $data->jumlah_halaman }}</td>
-                            <td>{{ $data->kategori->nama_kategori }}</td>
                             <td class="d-flex">
                                 <a href="{{ route('admin.Buku.edit', $data->id_buku) }}"
                                     class="btn btn-sm btn-warning me-2">Edit</a>

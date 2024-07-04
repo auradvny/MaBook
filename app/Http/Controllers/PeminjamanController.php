@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Buku;
 use App\Models\User;
 use Illuminate\View\View;
@@ -13,13 +14,21 @@ class PeminjamanController extends Controller
 {
     public function index()
     {
-        // $user_id = Auth::id();
-        // $peminjaman = Peminjaman::where('user_id', $user_id)->with('buku')->get();
+        $PeminjamanBelumDikembalikan = Peminjaman::where('status_peminjaman', 'Belum dikembalikan')->with('User', 'Buku')->get();
+        $PeminjamanDikembalikan = Peminjaman::where('status_peminjaman', 'Sudah dikembalikan')->with('User', 'Buku')->get();
 
-        // return view('peminjaman', compact('peminjaman'));
-        $Peminjaman = Peminjaman::get();
-        return view('admin.Peminjaman.manage', compact('Peminjaman'));
+        return view('admin.Peminjaman.manage', compact('PeminjamanBelumDikembalikan', 'PeminjamanDikembalikan'));
     }
+
+    // public function index()
+    // {
+    //     // $user_id = Auth::id();
+    //     // $peminjaman = Peminjaman::where('user_id', $user_id)->with('buku')->get();
+
+    //     // return view('peminjaman', compact('peminjaman'));
+    //     $Peminjaman = Peminjaman::get();
+    //     return view('admin.Peminjaman.manage', compact('Peminjaman'));
+    // }
 
     public function userindex()
     {
@@ -51,35 +60,76 @@ class PeminjamanController extends Controller
         $Buku = Buku::all();
         return view('admin.Peminjaman.create', compact('User', 'Buku')); // Mengirimkan variabel $KategoriBuku ke view
     }
-    public function create(): View
+
+    // public function create()
+    // {
+    //     $User = User::where('usertype', 'user')->get();
+    //     $Buku = Buku::all();
+    //     $statuses = ['belum dikembalikan']; // Jika ada status lain, tambahkan di sini
+
+    //     return view('admin.Peminjaman.create', compact('User', 'Buku', 'statuses'));
+    // }
+
+    public function create()
     {
-        $User = User::all();
-        $Buku = Buku::all();
-        $statuses = ['belum dikembalikan', 'sudah dikembalikan'];
-        return view('admin.Peminjaman.create', compact('User', 'Buku', 'statuses'));
+        $User = User::where('usertype', 'user')->get();
+        $Buku = Buku::whereDoesntHave('peminjaman', function ($query) {
+            $query->where('status_peminjaman', 'belum dikembalikan');
+        })->get();
+        $statuses = ['sudah dikembalikan']; // Jika ada status lain, tambahkan di sini
+
+        return view('admin.peminjaman.create', compact('User', 'Buku', 'statuses'));
     }
-
-
-    // Store a new category
     public function submit(Request $request)
     {
-        // Validate the request data
+        $request->validate([
+            'user_id' => 'required',
+            'buku_id' => 'required',
+            'tanggal_peminjaman' => 'required|date',
+        ]);
 
+        $tanggal_peminjaman = Carbon::parse($request->tanggal_peminjaman);
+        $tanggal_pengembalian = $tanggal_peminjaman->copy()->addDays(3);
 
-
-        //  // Save the data to the database
-        $Peminjaman = new Peminjaman();
-        $Peminjaman->user_id = $request->user_id;
-        $Peminjaman->buku_id = $request->buku_id;
-        $Peminjaman->tanggal_peminjaman = $request->tanggal_peminjaman;
-        $Peminjaman->tanggal_pengembalian = $request->tanggal_pengembalian;
-        $Peminjaman->status_peminjaman = $request->status_peminjaman;
-        $Peminjaman->save();
-
-
+        Peminjaman::create([
+            'user_id' => $request->user_id,
+            'buku_id' => $request->buku_id,
+            'tanggal_peminjaman' => $tanggal_peminjaman,
+            'tanggal_pengembalian' => $tanggal_pengembalian,
+            'status_peminjaman' => 'belum dikembalikan',
+        ]);
 
         return redirect()->route('admin.Peminjaman.manage')->with('success', 'Peminjaman berhasil ditambahkan');
     }
+    // public function create(): View
+    // {
+    //     $User = User::all();
+    //     $Buku = Buku::all();
+    //     $statuses = ['belum dikembalikan', 'sudah dikembalikan'];
+    //     return view('admin.Peminjaman.create', compact('User', 'Buku', 'statuses'));
+    // }
+
+
+    // Store a new category
+    // public function submit(Request $request)
+    // {
+    //     // Validate the request data
+
+
+
+    //     //  // Save the data to the database
+    //     $Peminjaman = new Peminjaman();
+    //     $Peminjaman->user_id = $request->user_id;
+    //     $Peminjaman->buku_id = $request->buku_id;
+    //     $Peminjaman->tanggal_peminjaman = $request->tanggal_peminjaman;
+    //     $Peminjaman->tanggal_pengembalian = $request->tanggal_pengembalian;
+    //     $Peminjaman->status_peminjaman = $request->status_peminjaman;
+    //     $Peminjaman->save();
+
+
+
+    //     return redirect()->route('admin.Peminjaman.manage')->with('success', 'Peminjaman berhasil ditambahkan');
+    // }
 
     function edit($id_peminjaman)
     {

@@ -24,7 +24,7 @@
                         <th>No</th>
                         <th>Judul Buku</th>
                         <th>Tanggal Peminjaman</th>
-                        {{-- <th>Tanggal Pengembalian</th> --}}
+                        <th>Tanggal Pengembalian</th>
                         <th>Status Peminjaman</th>
                     </tr>
                 </thead>
@@ -35,8 +35,8 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->buku->judul_buku }}</td>
                             <td>{{ $data->tanggal_peminjaman }}</td>
-                            {{-- <td>{{ $data->tanggal_pengembalian }}</td> --}}
-                            {{-- <td>{{ $data->status_peminjaman }}</td> --}}
+                            <td>{{ $data->tanggal_pengembalian }}</td>
+                            <td>{{ $data->status_peminjaman }}</td>
                         </tr>
                     @endforeach
                 </tbody>
