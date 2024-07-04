@@ -70,6 +70,7 @@
                         <th>Judul Buku</th>
                         <th>Tanggal Peminjaman</th>
                         <th>Tanggal Dikembalikan</th>
+                        <th>Denda</th>
                         <th>Status Peminjaman</th>
                     </tr>
                 </thead>
@@ -82,6 +83,7 @@
                             <td>{{ $data->Buku->judul_buku }}</td>
                             <td>{{ $data->tanggal_peminjaman }}</td>
                             <td>{{ $data->updated_at }}</td>
+                            <td>Rp. {{ $data->denda }}</td>
                             <td>{{ $data->status_peminjaman }}</td>
                         </tr>
                     @endforeach

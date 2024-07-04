@@ -51,7 +51,7 @@ Route::post('/peminjaman/{id_buku}', [BukuPinjamController::class, 'index'])
     ->middleware(['auth', 'verified']);
 
 
-    Route::get('/pencarian/{id_kategori)', [BukuPinjamController::class, 'pencarian'])->name('pencarian');
+Route::get('/pencarian/{id_kategori)', [BukuPinjamController::class, 'pencarian'])->name('pencarian');
 
 // Route::post('/submit/{id_buku}', [BukuPinjamController::class, 'submit'])
 //     ->name('submit')
@@ -78,7 +78,9 @@ Route::middleware('auth', 'admin')->group(function () {
 
     Route::get('/admin/KategoriBuku', [KategoriBukuController::class, 'index'])->name('admin.KategoriBuku');
     Route::get('/admin/KategoriBuku/create', [KategoriBukuController::class, 'create'])->name('admin.KategoriBuku.create');
+    // Route::post('/admin/KategoriBuku/submit', [KategoriBukuController::class, 'submit'])->name('admin.KategoriBuku.submit');
     Route::post('/admin/KategoriBuku/submit', [KategoriBukuController::class, 'submit'])->name('admin.KategoriBuku.submit');
+
     Route::get('/admin/KategoriBuku/edit/{id_kategori}', [KategoriBukuController::class, 'edit'])->name('admin.KategoriBuku.edit');
     Route::post('/admin/KategoriBuku/update/{id_kategori}', [KategoriBukuController::class, 'update'])->name('admin.KategoriBuku.update');
     Route::post('/admin/KategoriBuku/delete/{id}', [KategoriBukuController::class, 'destroy'])->name('admin.KategoriBuku.delete');

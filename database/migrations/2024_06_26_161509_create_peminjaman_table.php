@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian')->nullable();
             $table->enum('status_peminjaman', ['Belum Dikembalikan', 'Sudah Dikembalikan']);
+            $table->decimal('denda')->nullable();
             $table->timestamps();
 
             // Membuat foreign key constraints
@@ -31,11 +32,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-    Schema::table('peminjaman', function (Blueprint $table) {
-        $table->dropForeign(['user_id']);
-        $table->dropColumn('user_id');
-        $table->dropForeign(['buku_id']);
-        $table->dropColumn('buku_id');
-    });
- }
+        Schema::table('peminjaman', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
+            $table->dropForeign(['buku_id']);
+            $table->dropColumn('buku_id');
+        });
+    }
 };

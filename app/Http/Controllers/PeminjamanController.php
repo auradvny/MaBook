@@ -139,17 +139,42 @@ class PeminjamanController extends Controller
         $statuses = ['Belum Dikembalikan', 'Sudah Dikembalikan'];
         return view('admin.Peminjaman.edit', compact('Peminjaman', 'User', 'Buku', 'statuses'));
     }
+    // function update(Request $request, $id_peminjaman)
+    // {
+    //     $Peminjaman = Peminjaman::find($id_peminjaman);
+    //     $Peminjaman->buku_id = $request->buku_id;
+    //     $Peminjaman->tanggal_peminjaman = $request->tanggal_peminjaman;
+    //     $Peminjaman->tanggal_pengembalian = $request->tanggal_pengembalian;
+    //     $Peminjaman->status_peminjaman = $request->status_peminjaman;
+    //     $Peminjaman->update();
+
+    //     return redirect()->route('admin.Peminjaman.manage');
+    // }
     function update(Request $request, $id_peminjaman)
     {
         $Peminjaman = Peminjaman::find($id_peminjaman);
         $Peminjaman->buku_id = $request->buku_id;
-        $Peminjaman->tanggal_peminjaman = $request->tanggal_peminjaman;
-        $Peminjaman->tanggal_pengembalian = $request->tanggal_pengembalian;
         $Peminjaman->status_peminjaman = $request->status_peminjaman;
+
+        // Hitung denda jika status peminjaman sudah dikembalikan
+        if ($request->status_peminjaman == 'Sudah Dikembalikan') {
+            $tanggal_pengembalian = new \DateTime($Peminjaman->tanggal_pengembalian);
+            $tanggal_dikembalikan = new \DateTime(); // updated_at akan diatur secara otomatis
+            $selisih = $tanggal_dikembalikan->diff($tanggal_pengembalian)->days;
+
+            if ($selisih > 0) {
+                $denda = $selisih * 2000;
+                $Peminjaman->denda = $denda;
+            } else {
+                $Peminjaman->denda = 0;
+            }
+        }
+
         $Peminjaman->update();
 
         return redirect()->route('admin.Peminjaman.manage');
     }
+
 
     function delete($id_peminjaman)
     {

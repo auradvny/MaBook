@@ -39,7 +39,7 @@
                             </td>
                             <td>{{ \Carbon\Carbon::parse($data->updated_at)->setTimezone('Asia/Jakarta')->format('d-m-Y') }}
                             </td>
-                            <td>0</td>
+                            <td>Rp. {{ $data->denda }}</td>
                             <td>{{ $data->status_peminjaman }}</td>
                         </tr>
                     @endforeach
