@@ -34,6 +34,20 @@ class UserController extends Controller
 
         return redirect()->route('admin.User.manage');
     }
+
+    public function submitAdmin(Request $request)
+    {
+        $User = new User();
+        $User->name = $request->name;
+        $User->email = $request->email;
+        $User->usertype = $request->usertype;
+
+        $User->save();
+
+
+        return redirect()->route('admin.User.manage');
+    }
+
     function edit($id)
     {
         $User = User::find($id);

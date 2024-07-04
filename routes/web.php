@@ -95,6 +95,9 @@ Route::middleware('auth', 'admin')->group(function () {
 
     Route::get('/admin/User/create', [UserController::class, 'create'])->name('admin.User.create');
     Route::post('/admin/User/submit', [UserController::class, 'submit'])->name('admin.User.submit');
+    // Route::get('/admin/User/edit/{id}', [UserController::class, 'edit'])->name('admin.User.edit');
+    // Route::get('/admin/Admin/create', [UserController::class, 'createAdmin'])->name('admin.User.create');
+    Route::post('/admin/Admin/submit', [UserController::class, 'submitAdmin'])->name('admin.User.submitAdmin');
     Route::get('/admin/User/edit/{id}', [UserController::class, 'edit'])->name('admin.User.edit');
     Route::post('/admin/User/update/{id}', [UserController::class, 'update'])->name('admin.User.update');
     Route::post('/admin/User/delete/{id}', [UserController::class, 'delete'])->name('admin.User.delete');
