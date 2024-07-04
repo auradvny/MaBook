@@ -47,11 +47,17 @@
                             <td class="d-flex">
                                 <a href="{{ route('admin.Buku.edit', $data->id_buku) }}"
                                     class="btn btn-sm btn-warning me-2">Edit</a>
+                                {{-- <form action="{{ route('admin.Buku.delete', $data->id_buku) }}" method="POST"
+                                    class="d-inline">
+                                    @csrf
+                                    <button class="btn btn-sm btn-danger">Hapus</button>
+                                </form> --}}
                                 <form action="{{ route('admin.Buku.delete', $data->id_buku) }}" method="POST"
                                     class="d-inline">
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
+
                             </td>
                         </tr>
                     @endforeach
