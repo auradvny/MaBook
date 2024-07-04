@@ -9,10 +9,14 @@ use App\Http\Controllers\KategoriBukuUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\BukuPinjamController;
+use App\Http\Controllers\AdminController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 Route::get('/dashboard', [KategoriBukuUserController::class, 'index'])
     ->middleware(['auth', 'verified'])

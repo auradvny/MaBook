@@ -16,61 +16,24 @@
                 {{ __('Dashboard Admin') }}
             </h2>
         </x-slot>
-        <div class="container mt-3">
-            <h4>List Kategori Buku</h4>
-            <div class="d-flex justify-content-end mb-3">
-                <a class="btn btn-success" href="{{ route('admin.KategoriBuku.create') }}">Tambah</a>
-            </div>
-            <table class="table table-striped table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Kategori</th>
-                        <th>Deskripsi Kategori</th>
-                        {{-- <th>Gambar</th> --}}
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no = 1; ?>
-                    @foreach ($KategoriBuku as $data)
-                        <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $data->nama_kategori }}</td>
-                            <td>{{ $data->deskripsi_kategori }}</td>
-                            {{-- <td><img src="{{ $data->image_url }}" alt="{{ $data->nama_kategori }}" style="width: 50px; height: 50px;"></td> --}}
-                            <td class="d-flex">
-                                <a href="{{ route('admin.KategoriBuku.edit', $data->id_kategori) }}"
-                                    class="btn btn-sm btn-warning me-2">Edit</a>
-                                <form action="{{ route('admin.KategoriBuku.delete', $data->id_kategori) }}"
-                                    method="POST">
-                                    @csrf
-                                    <button class="btn btn-sm btn-danger">Hapus</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
 
-            <div class="mt-3">
-                <h4>Manage Buku</h4>
-                <div class="d-flex justify-content-end mb-3">
-                    <a class="btn btn-success" href="{{ route('admin.Buku.manage') }}">Manage</a>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card text-white bg-primary">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Buku</h5>
+                            {{-- <p class="card-text">{{ $jumlahBuku }}</p> --}}
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="mt-3">
-                <h4>Manage User</h4>
-                <div class="d-flex justify-content-end mb-3">
-                    <a class="btn btn-success" href="{{ route('admin.User.manage') }}">Manage</a>
-                </div>
-            </div>
-
-            <div class="mt-3">
-                <h4>Manage Peminjaman</h4>
-                <div class="d-flex justify-content-end mb-3">
-                    <a class="btn btn-success" href="{{ route('admin.Peminjaman.manage') }}">Manage</a>
+                <div class="col-lg-6 mb-4">
+                    <div class="card text-white bg-success">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah User</h5>
+                            {{-- <p class="card-text">{{ $id_user }}</p> --}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
