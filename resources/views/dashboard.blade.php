@@ -72,9 +72,101 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          <img src=" assets/img/1.png" >
 
+          <div class="container">
+            <div class="row row-cols-2">
+              <div class="col">  <img src=" assets/img/2.jpg">  </div>
 
+              <div class="col">
+                <p></p>
+                  
+                <h1 style="color: rgb(0, 82, 132); font-size: 2em;" ><b>Koleksi</b></h1>
+             
+                
+                <p> Perpustakaan Ma'arif NU 1 Ajibarang memiliki lebih dari banyak koleksi dalam berbagai bentuk, seperti buku, buku digital, audiovisual, majalah, koran, jurnal, dan jurnal elektronik. Koleksi ini mencakup beragam topik dan genre yang cocok untuk semua kalangan pembaca, mulai dari pelajar hingga peneliti profesional. Dengan terus memperbarui koleksi, perpustakaan ini berkomitmen untuk menyediakan sumber daya informasi yang terkini dan relevan.</p>
+            </div>
+            <div class="col">
+                <p>
+                </p>
+                <h1 style="color: rgb(0, 82, 132); font-size: 2em;" style="text-align: right;"><b>Pelayanan</b></h1>
+                <p> Pelayanan Perpustakaan Ma'arif NU 1 Ajibarang yang profesional dan sesuai dengan 
+                    Standar Nasional</p>
+            </div>
+              <div class="col"> <img src=" assets/img/3.png"></div>
+            </div>
+          </div>
+          <img src=" assets/img/1.png" >
 
+          <footer id="footer" class="footer position-relative light-background">
+
+            <div class="container footer-top">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-6 footer-about">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <span class="sitename">QuickStart</span>
+                        </a>
+                        <div class="footer-contact pt-3">
+                            <p>Jl. Raya Ajibarang Km. 1 Ajibarang,</p>
+                            <p>Kab. Banyumas Jawa Tengah</p>
+                            <p class="mt-3"><strong>Phone:</strong> <span>+62-281-571 284</span></p>
+                            <p><strong>Email:</strong> <span>smkmanusa_ajibarang@yahoo.co.id</span></p>
+                        </div>
+    
+                    </div>
+    
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Our Team</h4>
+                        <ul>
+                            <li><a href="https://www.instagram.com/" target="_blank">Sesa Ajeng Maesara</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank">Dwita Isma Aprilia</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank">Aura Devany Salsabila Bachtiar</a>
+                            </li>
+                            <li><a href="https://www.instagram.com/" target="_blank">Amanda Jepson</a></li>
+                            {{-- <li>Marketing</a></li>
+                            <li>Graphic Design</a></li> --}}
+                        </ul>
+                    </div>
+    
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Follow our social media</h4>
+                        <div class="social-links d-flex mt-4">
+                            <a href="https://x.com/" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                            <a href="https://www.facebook.com/people/Smkmanusaajibarang/pfbid02xkAWBhhsQ8wcD5dEKKTZjaU9icmYJHtGy9x2hnTjyo3VGBwDA38h9WWWv8Bz4bel/"
+                                target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/smk_maarif_nu_1_ajibarang/" target="_blank"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://www.youtube.com/c/SMKMaarifNU1Ajibarang" target="_blank"><i
+                                    class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="container copyright text-center mt-4">
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">MaBook</strong><span>All Rights
+                        Reserved</span></p>
+                {{-- <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you've purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div> --}}
+            </div>
+    
+        </footer>
+    
         </div>
     </body>
 

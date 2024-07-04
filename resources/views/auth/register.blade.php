@@ -1,7 +1,7 @@
 <x-guest-layout>
-    {{-- <div class="flex justify-center mb-4">
+    <div class="flex justify-center mb-4">
         <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" class="w-24 h-24" width='80'>
-    </div> --}}
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
